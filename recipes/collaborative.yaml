@@ -1,0 +1,18 @@
+# refer to src/sal/config.py for more options
+
+approach: collaborative
+seed: 0
+sort_completed: true
+filter_duplicates: true
+
+model_path_big: gpt-4o-mini
+model_path_small: Qwen/Qwen2.5-1.5B-Instruct
+output_path: outputs/math500_collaborative.jsonl
+
+search_batch_size: 2
+
+n: 8
+thresh: 0.5
+
+gpu_memory_utilization: 0.85
+tensor_parallel_size: 1
