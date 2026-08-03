@@ -12,7 +12,6 @@ output_path: outputs/math500_collaborative.jsonl
 search_batch_size: 2
 
 n: 8
-thresh: 0.5
 
 gpu_memory_utilization: 0.85
 tensor_parallel_size: 1

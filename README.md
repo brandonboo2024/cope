@@ -8,6 +8,10 @@ This repository contains the codebase for the TMLR paper
 framework where small and large language models take turns planning and
 executing to solve tasks cost-efficiently.
 
+<p align="center">
+  <img src="assets/method_1.png" alt="Overview of COPE" width="850">
+</p>
+
 ## Setup
 
 Create and activate a Python environment:
@@ -21,6 +25,12 @@ Install the package in editable mode:
 
 ```shell
 pip install -e ".[dev]"
+```
+
+Set your OpenAI API key:
+
+```shell
+export OPENAI_API_KEY="your-api-key"
 ```
 
 ## Run

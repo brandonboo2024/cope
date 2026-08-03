@@ -26,24 +26,25 @@ extras["trl"] = "trl @ git+https://github.com/huggingface/trl.git"
 
 install_requires = [
     "accelerate",
-    "pebble",  # for parallel processing
-    "latex2sympy2==1.9.1",  # for MATH answer parsing
-    "word2number",  # for MATH answer parsing
-    "transformers>=4.47.0,<4.48.0",
+    "datasets",
     "fastapi",
     "hf_transfer",
+    "latex2sympy2==1.9.1",
+    "openai>=1.45.0",
+    "pebble",
+    "transformers>=4.47.0,<4.48.0",
+    "word2number",
 ]
 
 setup(
-    name="search-and-learn",
+    name="cope",
     version="0.1.0",
-    author="The Hugging Face team (past and future)",
-    author_email="lewis@huggingface.co",
-    description="A tool for search-based methods on llms",
+    author="COPE authors",
+    description="Official code for Efficient LLM Collaboration via Planning",
     long_description=open("README.md", "r", encoding="utf-8").read(),
     long_description_content_type="text/markdown",
-    url="https://github.com/huggingface/search-and-learn",
-    keywords="nlp deep learning mcts",
+    url="https://github.com/prinwinter/cope",
+    keywords="large language models collaboration planning",
     license="Apache",
     package_dir={"": "src"},
     packages=find_packages("src"),
@@ -55,7 +56,7 @@ setup(
         "License :: OSI Approved :: Apache Software License",
         "Operating System :: OS Independent",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
         "Topic :: Scientific/Engineering :: Artificial Intelligence",
     ],
     python_requires=">=3.10.9",
