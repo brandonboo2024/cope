@@ -1,8 +1,8 @@
 # COPE
 
-This repository contains the codebase for the TMLR paper
-**Efficient LLM Collaboration via Planning**
-([OpenReview](https://openreview.net/forum?id=RPzbeL0koP), [arXiv](https://arxiv.org/abs/2506.11578)).
+This repository contains the official implementation of the paper **Efficient LLM Collaboration via Planning**.
+
+[[Paper]](https://openreview.net/forum?id=RPzbeL0koP) | [[arXiv]](https://arxiv.org/abs/2506.11578)
 
 **COPE (Collaborative Planning and Execution)** is a test-time collaboration
 framework where small and large language models take turns planning and
