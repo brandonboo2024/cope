@@ -5,7 +5,7 @@ seed: 0
 sort_completed: true
 filter_duplicates: true
 
-model_path_big: gpt-4o-mini
+model_path_big: deepseek-flash
 model_path_small: Qwen/Qwen2.5-1.5B-Instruct
 output_path: outputs/math500_collaborative.jsonl
 
