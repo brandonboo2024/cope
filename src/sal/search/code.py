@@ -143,4 +143,18 @@ def direct_code(task, config, llm_big, llm_small, rng):
     return {**rec, "pred": pred}
 
 
-CODE_APPROACHES = {"collaborative": cope_code, "direct": direct_code}
+def big_plan_code(task, config, llm_big, llm_small, rng):
+    """Large model plans and executes: COPE's stage 3 for every task, no tests consulted."""
+    rec = {"small_in": 0, "small_out": 0, "big_in": 0, "big_out": 0,
+           "guide_small": None, "round": 0}
+    rec["guide_big"], tok = big_generate(
+        llm_big, config, conv(config.system_prompt_guide_big, task["problem"]), 0.8)
+    rec["big_in"] += tok[0]; rec["big_out"] += tok[1]
+    pred, tok = big_generate(llm_big, config, conv(
+        config.system_prompt,
+        config.user_prompt_guide_3.format(problem=task["problem"], guide_big=rec["guide_big"])), 0)
+    rec["big_in"] += tok[0]; rec["big_out"] += tok[1]
+    return {**rec, "pred": pred}
+
+
+CODE_APPROACHES = {"collaborative": cope_code, "direct": direct_code, "big_plan": big_plan_code}

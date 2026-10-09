@@ -59,7 +59,8 @@ def main():
     llm_big = OpenAI(api_key=os.environ["OPENAI_API_KEY"],
                      base_url=os.environ.get("OPENAI_BASE_URL"))
     llm_small = None
-    if not (config.approach == "direct" and config.direct_model == "big"):
+    if not (config.approach == "big_plan"
+            or (config.approach == "direct" and config.direct_model == "big")):
         from vllm import LLM
         llm_small = LLM(model=config.model_path_small,
                         gpu_memory_utilization=config.gpu_memory_utilization,

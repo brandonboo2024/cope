@@ -1,0 +1,174 @@
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/datasets/google-research-datasets/mbpp/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/google-research-datasets/mbpp/4bb6404fdc6cacfda99d4ac4205087b89d32030c/README.md?%2Fdatasets%2Fgoogle-research-datasets%2Fmbpp%2Fresolve%2Fmain%2FREADME.md=&etag=%22476c2286e2ef2713058cade8be49c2f9c1514055%22 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/datasets/google-research-datasets/mbpp/resolve/4bb6404fdc6cacfda99d4ac4205087b89d32030c/mbpp.py "HTTP/1.1 404 Not Found"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+INFO:httpx:HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/google-research-datasets/mbpp/google-research-datasets/mbpp.py "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/datasets/google-research-datasets/mbpp/revision/4bb6404fdc6cacfda99d4ac4205087b89d32030c "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/datasets/google-research-datasets/mbpp/resolve/4bb6404fdc6cacfda99d4ac4205087b89d32030c/.huggingface.yaml "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=google-research-datasets/mbpp "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/datasets/google-research-datasets/mbpp/tree/4bb6404fdc6cacfda99d4ac4205087b89d32030c/full?recursive=true&expand=false "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/datasets/google-research-datasets/mbpp/tree/4bb6404fdc6cacfda99d4ac4205087b89d32030c?recursive=false&expand=false "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/datasets/google-research-datasets/mbpp/resolve/4bb6404fdc6cacfda99d4ac4205087b89d32030c/dataset_infos.json "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/datasets/dz1/CodeScore-MBPP-ET/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/dz1/CodeScore-MBPP-ET/461ea53554be959016b75d9c4ed8f12598a48cc0/README.md?%2Fdatasets%2Fdz1%2FCodeScore-MBPP-ET%2Fresolve%2Fmain%2FREADME.md=&etag=%227b95401dc46245ac339fc25059d4a56d90b4cde5%22 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/datasets/dz1/CodeScore-MBPP-ET/resolve/461ea53554be959016b75d9c4ed8f12598a48cc0/CodeScore-MBPP-ET.py "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/dz1/CodeScore-MBPP-ET/dz1/CodeScore-MBPP-ET.py "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/datasets/dz1/CodeScore-MBPP-ET/revision/461ea53554be959016b75d9c4ed8f12598a48cc0 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/datasets/dz1/CodeScore-MBPP-ET/resolve/461ea53554be959016b75d9c4ed8f12598a48cc0/.huggingface.yaml "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=dz1/CodeScore-MBPP-ET "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/datasets/dz1/CodeScore-MBPP-ET/tree/461ea53554be959016b75d9c4ed8f12598a48cc0/data?recursive=true&expand=false "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/datasets/dz1/CodeScore-MBPP-ET/tree/461ea53554be959016b75d9c4ed8f12598a48cc0?recursive=false&expand=false "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/datasets/dz1/CodeScore-MBPP-ET/resolve/461ea53554be959016b75d9c4ed8f12598a48cc0/dataset_infos.json "HTTP/1.1 404 Not Found"
+INFO:__main__:50 eligible tasks; reference failed on []
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:1/50 task 11: round 0, correct=True
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:2/50 task 12: round 0, correct=True
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:3/50 task 13: round 0, correct=False
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:4/50 task 14: round 0, correct=True
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:5/50 task 15: round 0, correct=True
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:6/50 task 16: round 0, correct=True
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:7/50 task 17: round 0, correct=True
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:8/50 task 18: round 0, correct=True
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:9/50 task 19: round 0, correct=True
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:10/50 task 20: round 0, correct=True
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:11/50 task 21: round 0, correct=True
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:12/50 task 22: round 0, correct=True
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:13/50 task 23: round 0, correct=True
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:14/50 task 24: round 0, correct=True
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:15/50 task 25: round 0, correct=False
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:16/50 task 26: round 0, correct=True
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:17/50 task 27: round 0, correct=True
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:18/50 task 28: round 0, correct=True
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:19/50 task 29: round 0, correct=False
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:20/50 task 30: round 0, correct=True
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:21/50 task 31: round 0, correct=False
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:22/50 task 32: round 0, correct=False
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:23/50 task 33: round 0, correct=True
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:24/50 task 34: round 0, correct=False
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:25/50 task 35: round 0, correct=True
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:26/50 task 36: round 0, correct=True
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:27/50 task 37: round 0, correct=True
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:28/50 task 38: round 0, correct=False
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:29/50 task 39: round 0, correct=True
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:30/50 task 40: round 0, correct=True
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:31/50 task 41: round 0, correct=True
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:32/50 task 42: round 0, correct=True
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:33/50 task 43: round 0, correct=True
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:34/50 task 44: round 0, correct=False
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:35/50 task 45: round 0, correct=True
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:36/50 task 46: round 0, correct=True
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:37/50 task 47: round 0, correct=True
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:38/50 task 48: round 0, correct=False
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:39/50 task 49: round 0, correct=True
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:40/50 task 50: round 0, correct=True
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:41/50 task 51: round 0, correct=True
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:42/50 task 52: round 0, correct=True
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:43/50 task 53: round 0, correct=True
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:44/50 task 54: round 0, correct=True
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:45/50 task 55: round 0, correct=False
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:46/50 task 56: round 0, correct=True
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:47/50 task 57: round 0, correct=False
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:48/50 task 58: round 0, correct=True
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:49/50 task 59: round 0, correct=True
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:50/50 task 60: round 0, correct=False
+INFO:__main__:{"file": "outputs/cs470/mbpp_big_plan.jsonl", "tasks": 50, "correct": 38, "accuracy": 0.76, "passes_public": 45, "tokens_per_task": 718.44, "small_tokens_per_task": 0.0, "big_tokens_per_task": 718.44, "usd_total": 0.029512800000000006, "rounds": {"0": 50, "1": 0, "2": 0, "3": 0}}

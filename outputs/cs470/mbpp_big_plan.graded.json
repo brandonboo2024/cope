@@ -1,0 +1,18 @@
+{
+ "file": "outputs/cs470/mbpp_big_plan.jsonl",
+ "tasks": 50,
+ "excluded_task_ids": [],
+ "correct": 38,
+ "accuracy": 0.76,
+ "passes_public": 45,
+ "tokens_per_task": 718.44,
+ "small_tokens_per_task": 0.0,
+ "big_tokens_per_task": 718.44,
+ "usd_total": 0.029512800000000006,
+ "rounds": {
+  "0": 50,
+  "1": 0,
+  "2": 0,
+  "3": 0
+ }
+}

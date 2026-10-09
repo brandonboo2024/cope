@@ -1,0 +1,25 @@
+# cs470: DeepSeek writes COPE's guideline, then DeepSeek solves with it (COPE stage 3
+# for every task; the same-model plan-then-execute control).
+approach: big_plan
+seed: 0
+sort_completed: true
+filter_duplicates: true
+
+model_path_big: deepseek-flash
+model_path_small: Qwen/Qwen2.5-1.5B-Instruct
+# Use Qwen's own chat template, as the upstream Qwen recipes do; the config
+# default is a Llama-3 template.
+custom_chat_template: null
+
+dataset_name: HuggingFaceH4/MATH-500
+dataset_split: test
+num_samples: 50
+
+n: 1
+max_tokens: 2048
+search_batch_size: 2
+gpu_memory_utilization: 0.85
+enforce_eager: true  # torch.compile needs a Blackwell ptxas this NixOS setup lacks
+tensor_parallel_size: 1
+
+output_path: outputs/cs470/math500_big_plan.jsonl
