@@ -1,0 +1,112 @@
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/datasets/google-research-datasets/mbpp/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/google-research-datasets/mbpp/4bb6404fdc6cacfda99d4ac4205087b89d32030c/README.md?%2Fdatasets%2Fgoogle-research-datasets%2Fmbpp%2Fresolve%2Fmain%2FREADME.md=&etag=%22476c2286e2ef2713058cade8be49c2f9c1514055%22 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/datasets/google-research-datasets/mbpp/resolve/4bb6404fdc6cacfda99d4ac4205087b89d32030c/mbpp.py "HTTP/1.1 404 Not Found"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+INFO:httpx:HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/google-research-datasets/mbpp/google-research-datasets/mbpp.py "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/datasets/google-research-datasets/mbpp/revision/4bb6404fdc6cacfda99d4ac4205087b89d32030c "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/datasets/google-research-datasets/mbpp/resolve/4bb6404fdc6cacfda99d4ac4205087b89d32030c/.huggingface.yaml "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=google-research-datasets/mbpp "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/datasets/google-research-datasets/mbpp/tree/4bb6404fdc6cacfda99d4ac4205087b89d32030c/full?recursive=true&expand=false "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/datasets/google-research-datasets/mbpp/tree/4bb6404fdc6cacfda99d4ac4205087b89d32030c?recursive=false&expand=false "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/datasets/google-research-datasets/mbpp/resolve/4bb6404fdc6cacfda99d4ac4205087b89d32030c/dataset_infos.json "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/datasets/dz1/CodeScore-MBPP-ET/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/dz1/CodeScore-MBPP-ET/461ea53554be959016b75d9c4ed8f12598a48cc0/README.md?%2Fdatasets%2Fdz1%2FCodeScore-MBPP-ET%2Fresolve%2Fmain%2FREADME.md=&etag=%227b95401dc46245ac339fc25059d4a56d90b4cde5%22 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/datasets/dz1/CodeScore-MBPP-ET/resolve/461ea53554be959016b75d9c4ed8f12598a48cc0/CodeScore-MBPP-ET.py "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/dz1/CodeScore-MBPP-ET/dz1/CodeScore-MBPP-ET.py "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/datasets/dz1/CodeScore-MBPP-ET/revision/461ea53554be959016b75d9c4ed8f12598a48cc0 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/datasets/dz1/CodeScore-MBPP-ET/resolve/461ea53554be959016b75d9c4ed8f12598a48cc0/.huggingface.yaml "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=dz1/CodeScore-MBPP-ET "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/datasets/dz1/CodeScore-MBPP-ET/tree/461ea53554be959016b75d9c4ed8f12598a48cc0/data?recursive=true&expand=false "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/datasets/dz1/CodeScore-MBPP-ET/tree/461ea53554be959016b75d9c4ed8f12598a48cc0?recursive=false&expand=false "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/datasets/dz1/CodeScore-MBPP-ET/resolve/461ea53554be959016b75d9c4ed8f12598a48cc0/dataset_infos.json "HTTP/1.1 404 Not Found"
+INFO:__main__:50 eligible tasks; reference failed on []
+(MainProcess pid=61475) INFO 10-09 16:35:27 [api_utils.py:286] non-default args: {'enable_prefix_caching': True, 'gpu_memory_utilization': 0.85, 'disable_log_stats': True, 'enforce_eager': True, 'model': 'Qwen/Qwen2.5-1.5B-Instruct'}
+(MainProcess pid=61475) INFO 10-09 16:35:28 [model.py:699] Resolved architecture: Qwen2ForCausalLM
+(MainProcess pid=61475) INFO 10-09 16:35:28 [model.py:2109] Using max model len 32768
+(MainProcess pid=61475) INFO 10-09 16:35:28 [scheduler.py:308] Chunked prefill is enabled with max_num_batched_tokens=8192.
+(MainProcess pid=61475) WARNING 10-09 16:35:29 [vllm.py:1706] Enforce eager set, disabling torch.compile, CUDAGraphs, and JIT kernel warmup. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none and --kernel_config.enable_jit_warmup=False
+(MainProcess pid=61475) WARNING 10-09 16:35:29 [vllm.py:1750] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+(MainProcess pid=61475) INFO 10-09 16:35:29 [kernel.py:408] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'], gelu_and_mul_sparse=['triton', 'native'])
+(MainProcess pid=61475) INFO 10-09 16:35:29 [vllm.py:1968] Cudagraph is disabled under eager mode
+(MainProcess pid=61475) INFO 10-09 16:35:29 [compilation.py:331] Enabled custom fusions: norm_quant, act_quant
+(EngineCore pid=62015) INFO 10-09 16:35:31 [core.py:129] Initializing a V1 LLM engine (v0.31.0) with config: model='Qwen/Qwen2.5-1.5B-Instruct', speculative_config=None, tokenizer='Qwen/Qwen2.5-1.5B-Instruct', skip_tokenizer_init=False, tokenizer_mode=auto, revision=main, tokenizer_revision=main, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=32768, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, decode_context_parallel_size=1, dcp_comm_backend=ag_rs, disable_custom_all_reduce=False, quantization=None, quantization_config=None, enforce_eager=True, aux_output_config=AuxOutputConfig(enable_return_routed_experts=False, max_bytes=None), kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, per_request_spec_decode_metrics='none', kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False, jit_monitor_mode='warn', jit_monitor_verbose=False), seed=0, served_model_name=Qwen/Qwen2.5-1.5B-Instruct, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'mode': <CompilationMode.NONE: 0>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['all'], 'ir_enable_torch_wrap': False, 'splitting_ops': [], 'compile_mm_encoder': False, 'cudagraph_mm_encoder': False, 'encoder_cudagraph_token_budgets': [], 'encoder_cudagraph_max_vision_items_per_batch': 0, 'encoder_cudagraph_max_frames_per_batch': None, 'compile_sizes': [], 'compile_ranges_endpoints': [8192], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.NONE: 0>, 'cudagraph_num_of_warmups': 0, 'cudagraph_capture_sizes': [], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': True, 'fuse_act_quant': True, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False, 'enable_qk_norm_rope_fusion': False, 'fuse_rope_kvcache_cat_mla': False, 'fuse_act_padding': False, 'fuse_qk_norm_rope_kvcache': False}, 'max_cudagraph_capture_size': 0, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': False, 'static_all_moe_layers': []}, kernel_config=KernelConfig(ir_op_priority=IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'], gelu_and_mul_sparse=['triton', 'native']), enable_flashinfer_autotune=True, enable_cutedsl_warmup=True, enable_jit_warmup=False, moe_backend='auto', sparse_indexer_topk_backend='auto', linear_backend='auto', linear_backend_per_quant=None)
+(EngineCore pid=62015) INFO 10-09 16:35:31 [parallel_state.py:1825] world_size=1 rank=0 local_rank=0 distributed_init_method=file:///tmp/nix-shell.GPLlEN/vllm_dist_4d9363685a5f4f4cbf747efd30fe539a backend=nccl
+(EngineCore pid=62015) INFO 10-09 16:35:31 [parallel_state.py:2269] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, ETP rank 0, EP rank N/A, EPLB rank N/A
+(EngineCore pid=62015) INFO 10-09 16:35:31 [gpu_worker.py:479] Using V2 Model Runner
+(EngineCore pid=62015) INFO 10-09 16:35:32 [model_runner.py:375] Loading model from scratch...
+(EngineCore pid=62015) INFO 10-09 16:35:32 [cuda.py:526] Using FLASH_ATTN attention backend out of potential backends: ['FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION'].
+(EngineCore pid=62015) INFO 10-09 16:35:32 [flash_attn.py:1167] Using FlashAttention version 2
+(EngineCore pid=62015) INFO 10-09 16:35:33 [weight_utils.py:1063] Filesystem type for checkpoints: BTRFS. Checkpoint size: 2.88 GiB. Available RAM: 21.23 GiB.
+(EngineCore pid=62015) INFO 10-09 16:35:33 [weight_utils.py:1086] Auto-prefetch is disabled because the filesystem (BTRFS) is not a recognized network FS (NFS/Lustre). If you want to force prefetching, start vLLM with --safetensors-load-strategy=prefetch.
+Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  3.85it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  3.85it/s]
+
+(EngineCore pid=62015) INFO 10-09 16:35:33 [default_loader.py:484] Loading weights took 0.29 seconds
+(EngineCore pid=62015) INFO 10-09 16:35:33 [model_runner.py:407] Model loading took 2.98 GiB memory and 2.014334 seconds
+(EngineCore pid=62015) INFO 10-09 16:35:33 [topk_topp_sampler.py:124] Using FlashInfer for top-p & top-k sampling.
+(EngineCore pid=62015) INFO 10-09 16:35:33 [torch_utils.py:286] Reducing Torch threads from 8 to 1 for serving. Set OMP_NUM_THREADS in the external environment to override.
+(EngineCore pid=62015) INFO 10-09 16:35:33 [utils.py:343] Using LBNHC KV cache layout.
+(EngineCore pid=62015) INFO 10-09 16:35:35 [gpu_worker.py:692] Available KV cache memory: 9.28 GiB
+(EngineCore pid=62015) INFO 10-09 16:35:35 [kv_cache_utils.py:2464] GPU KV cache size: 347,440 tokens, Maximum concurrency for 32,768 tokens per request: 10.60x
+(EngineCore pid=62015) INFO 10-09 16:35:35 [gpu_worker.py:955] Free memory on device (14.37/15.47 GiB) on startup. Desired GPU memory utilization is (0.85, 13.15 GiB). Actual usage is 3.37 GiB for consumed memory (weights + non-torch), 0.5 GiB for peak activation, and 0.0 GiB for CUDAGraph memory. Replace gpu_memory_utilization config with `--kv-cache-memory=9804672512` (9.13 GiB) to fit into requested memory, or `--kv-cache-memory=11117915648` (10.35 GiB) to fully utilize gpu memory. Current kv cache memory in use is 9.28 GiB.
+(EngineCore pid=62015) INFO 10-09 16:35:35 [core.py:380] init engine (profile, create kv cache, warmup model) took 1.66 s
+(EngineCore pid=62015) INFO 10-09 16:35:35 [kernel.py:408] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'], gelu_and_mul_sparse=['triton', 'native'])
+(MainProcess pid=61475) INFO 10-09 16:35:37 [hf.py:646] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+INFO:__main__:1/50 task 11: round 2, correct=True
+INFO:__main__:2/50 task 12: round 1, correct=True
+INFO:__main__:3/50 task 13: round 3, correct=False
+INFO:__main__:4/50 task 14: round 1, correct=True
+INFO:__main__:5/50 task 15: round 3, correct=True
+INFO:__main__:6/50 task 16: round 1, correct=False
+INFO:__main__:7/50 task 17: round 1, correct=True
+INFO:__main__:8/50 task 18: round 1, correct=True
+INFO:__main__:9/50 task 19: round 1, correct=True
+INFO:__main__:10/50 task 20: round 1, correct=True
+INFO:__main__:11/50 task 21: round 1, correct=True
+INFO:__main__:12/50 task 22: round 1, correct=True
+INFO:__main__:13/50 task 23: round 1, correct=True
+INFO:__main__:14/50 task 24: round 2, correct=True
+INFO:__main__:15/50 task 25: round 1, correct=False
+INFO:__main__:16/50 task 26: round 1, correct=True
+INFO:__main__:17/50 task 27: round 1, correct=True
+INFO:__main__:18/50 task 28: round 1, correct=True
+INFO:__main__:19/50 task 29: round 1, correct=False
+INFO:__main__:20/50 task 30: round 2, correct=True
+INFO:__main__:21/50 task 31: round 3, correct=False
+INFO:__main__:22/50 task 32: round 1, correct=False
+INFO:__main__:23/50 task 33: round 2, correct=True
+INFO:__main__:24/50 task 34: round 1, correct=False
+INFO:__main__:25/50 task 35: round 1, correct=True
+INFO:__main__:26/50 task 36: round 3, correct=False
+INFO:__main__:27/50 task 37: round 1, correct=True
+INFO:__main__:28/50 task 38: round 1, correct=False
+INFO:__main__:29/50 task 39: round 3, correct=True
+INFO:__main__:30/50 task 40: round 1, correct=True
+INFO:__main__:31/50 task 41: round 1, correct=True
+INFO:__main__:32/50 task 42: round 3, correct=True
+INFO:__main__:33/50 task 43: round 1, correct=False
+INFO:__main__:34/50 task 44: round 1, correct=False
+INFO:__main__:35/50 task 45: round 1, correct=False
+INFO:__main__:36/50 task 46: round 1, correct=True
+INFO:__main__:37/50 task 47: round 2, correct=False
+INFO:__main__:38/50 task 48: round 3, correct=True
+INFO:__main__:39/50 task 49: round 1, correct=True
+INFO:__main__:40/50 task 50: round 2, correct=True
+INFO:__main__:41/50 task 51: round 1, correct=True
+INFO:__main__:42/50 task 52: round 1, correct=True
+INFO:__main__:43/50 task 53: round 1, correct=True
+INFO:__main__:44/50 task 54: round 1, correct=True
+INFO:__main__:45/50 task 55: round 3, correct=True
+INFO:__main__:46/50 task 56: round 1, correct=True
+INFO:__main__:47/50 task 57: round 1, correct=False
+INFO:__main__:48/50 task 58: round 1, correct=True
+INFO:__main__:49/50 task 59: round 1, correct=True
+INFO:__main__:50/50 task 60: round 3, correct=False
+INFO:__main__:{"file": "outputs/cs470/mbpp_cope.jsonl", "tasks": 50, "correct": 35, "accuracy": 0.7, "passes_public": 47, "tokens_per_task": 6207.7, "small_tokens_per_task": 5964.14, "big_tokens_per_task": 243.56, "usd_total": 0.0109443, "rounds": {"0": 0, "1": 35, "2": 6, "3": 9}}
+(MainProcess pid=61475) INFO 10-09 16:39:18 [utils.py:638] [shutdown] Process manager: send sigterm to process EngineCore
+(EngineCore pid=62015) INFO 10-09 16:39:18 [core.py:1409] [shutdown] EngineCore: trigger received signal=SIGTERM
+(EngineCore pid=62015) INFO 10-09 16:39:18 [core.py:1558] [shutdown] EngineCore: start mode=abort timeout=0s
+(EngineCore pid=62015) INFO 10-09 16:39:18 [core.py:1589] [shutdown] EngineCore: request processing complete; starting resource teardown
+(EngineCore pid=62015) INFO 10-09 16:39:18 [core.py:1422] [shutdown] EngineCore: exiting busy loop

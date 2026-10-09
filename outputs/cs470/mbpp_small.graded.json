@@ -1,0 +1,18 @@
+{
+ "file": "outputs/cs470/mbpp_small.jsonl",
+ "tasks": 50,
+ "excluded_task_ids": [],
+ "correct": 19,
+ "accuracy": 0.38,
+ "passes_public": 25,
+ "tokens_per_task": 447.62,
+ "small_tokens_per_task": 447.62,
+ "big_tokens_per_task": 0.0,
+ "usd_total": 0.0,
+ "rounds": {
+  "0": 50,
+  "1": 0,
+  "2": 0,
+  "3": 0
+ }
+}

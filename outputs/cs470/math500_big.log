@@ -1,0 +1,86 @@
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/datasets/HuggingFaceH4/MATH-500/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/HuggingFaceH4/MATH-500/6e4ed1a2a79af7d8630a6b768ec859cb5af4d3be/README.md?%2Fdatasets%2FHuggingFaceH4%2FMATH-500%2Fresolve%2Fmain%2FREADME.md=&etag=%227bcd88fdd6d84875d4599f8893aa5ed5938dbca8%22 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/resolve-cache/datasets/HuggingFaceH4/MATH-500/6e4ed1a2a79af7d8630a6b768ec859cb5af4d3be/README.md?%2Fdatasets%2FHuggingFaceH4%2FMATH-500%2Fresolve%2Fmain%2FREADME.md=&etag=%227bcd88fdd6d84875d4599f8893aa5ed5938dbca8%22 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/datasets/HuggingFaceH4/MATH-500/resolve/6e4ed1a2a79af7d8630a6b768ec859cb5af4d3be/MATH-500.py "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/HuggingFaceH4/MATH-500/HuggingFaceH4/MATH-500.py "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/datasets/HuggingFaceH4/MATH-500/revision/6e4ed1a2a79af7d8630a6b768ec859cb5af4d3be "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/datasets/HuggingFaceH4/MATH-500/resolve/6e4ed1a2a79af7d8630a6b768ec859cb5af4d3be/.huggingface.yaml "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=HuggingFaceH4/MATH-500 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/datasets/HuggingFaceH4/MATH-500/tree/6e4ed1a2a79af7d8630a6b768ec859cb5af4d3be/data?recursive=true&expand=false "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/datasets/HuggingFaceH4/MATH-500/tree/6e4ed1a2a79af7d8630a6b768ec859cb5af4d3be?recursive=false&expand=false "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/datasets/HuggingFaceH4/MATH-500/resolve/6e4ed1a2a79af7d8630a6b768ec859cb5af4d3be/dataset_infos.json "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/datasets/HuggingFaceH4/MATH-500/resolve/6e4ed1a2a79af7d8630a6b768ec859cb5af4d3be/test.jsonl "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/HuggingFaceH4/MATH-500/6e4ed1a2a79af7d8630a6b768ec859cb5af4d3be/test.jsonl?%2Fdatasets%2FHuggingFaceH4%2FMATH-500%2Fresolve%2F6e4ed1a2a79af7d8630a6b768ec859cb5af4d3be%2Ftest.jsonl=&etag=%222376b9a194b46c0790e197c91b7249e5f88ac09b%22 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/resolve-cache/datasets/HuggingFaceH4/MATH-500/6e4ed1a2a79af7d8630a6b768ec859cb5af4d3be/test.jsonl?%2Fdatasets%2FHuggingFaceH4%2FMATH-500%2Fresolve%2F6e4ed1a2a79af7d8630a6b768ec859cb5af4d3be%2Ftest.jsonl=&etag=%222376b9a194b46c0790e197c91b7249e5f88ac09b%22 "HTTP/1.1 200 OK"
+Generating test split:   0%|          | 0/500 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 500/500 [00:00<00:00, 152998.61 examples/s]
+Parameter 'fn_kwargs'={'config': Config(approach='direct', direct_model='big', big_thinking=False, model_path_big='deepseek-flash', model_path_small='Qwen/Qwen2.5-1.5B-Instruct', gpu_memory_utilization=0.85, tensor_parallel_size=1, prm_path='RLHFlow/Llama3.1-8B-PRM-Deepseek-Data', output_dir=None, output_path='outputs/cs470/math500_big.jsonl', num_proc=None, push_to_hub=False, hub_dataset_id=None, hub_dataset_private=False, overwrite_hub_revision=False, apply_voting=True, dataset_name='HuggingFaceH4/MATH-500', dataset_split='test', dataset_config=None, dataset_start=None, dataset_end=None, num_samples=50, system_prompt_guide_big='You are a skilled math coach.\nExplain how to solve the following math problem.\nFocus on strategy and key ideas.\nRespond in just one or two sentences. Return only the guidelines as plain text.', system_prompt_guide_small='You are a math teacher.\nState the goal of the following math problem in one sentence.', system_prompt='Solve the following math problem efficiently and clearly:\n\n- For simple problems (2 steps or fewer):\nProvide a concise solution with minimal explanation.\n\n- For complex problems (3 steps or more):\nUse this step-by-step format:\n\n## Step 1: [Concise description]\n[Brief explanation and calculations]\n\n## Step 2: [Concise description]\n[Brief explanation and calculations]\n\n...\n\nRegardless of the approach, always conclude with:\n\nTherefore, the final answer is: $\\boxed{answer}$. I hope it is correct.\n\nWhere [answer] is just the final number or expression that solves the problem.', user_prompt_guide_1='{problem}\n\nGoal: {guide_small}', user_prompt_guide_2='{problem}\n\nGoal: {guide_small}\n\nGuideline: {guide_big}', user_prompt_guide_3='{problem}\n\nGuideline: {guide_big}', custom_chat_template=None, n=1, temperature_big=0, temperature_small=0.8, top_p=1.0, prm_batch_size=4, search_batch_size=2, seed=0, max_tokens=2048, agg_strategy='last', beam_width=4, num_iterations=40, lookahead=1, filter_duplicates=True, sort_completed=True, max_workers=16, thresh=0.5), 'llm_big': <openai.OpenAI object at 0x7ffe3ef82a90>, 'llm_small': None} of the transform datasets.arrow_dataset.Dataset._map_single couldn't be hashed properly, a random hash was used instead. Make sure your transforms and parameters are serializable with pickle or dill for the dataset fingerprinting and caching to work. If you reuse this transform, the caching mechanism will consider it to be different from the previous calls and recompute everything. This warning is only shown once. Subsequent hashing failures won't be shown.
+WARNING:datasets.fingerprint:Parameter 'fn_kwargs'={'config': Config(approach='direct', direct_model='big', big_thinking=False, model_path_big='deepseek-flash', model_path_small='Qwen/Qwen2.5-1.5B-Instruct', gpu_memory_utilization=0.85, tensor_parallel_size=1, prm_path='RLHFlow/Llama3.1-8B-PRM-Deepseek-Data', output_dir=None, output_path='outputs/cs470/math500_big.jsonl', num_proc=None, push_to_hub=False, hub_dataset_id=None, hub_dataset_private=False, overwrite_hub_revision=False, apply_voting=True, dataset_name='HuggingFaceH4/MATH-500', dataset_split='test', dataset_config=None, dataset_start=None, dataset_end=None, num_samples=50, system_prompt_guide_big='You are a skilled math coach.\nExplain how to solve the following math problem.\nFocus on strategy and key ideas.\nRespond in just one or two sentences. Return only the guidelines as plain text.', system_prompt_guide_small='You are a math teacher.\nState the goal of the following math problem in one sentence.', system_prompt='Solve the following math problem efficiently and clearly:\n\n- For simple problems (2 steps or fewer):\nProvide a concise solution with minimal explanation.\n\n- For complex problems (3 steps or more):\nUse this step-by-step format:\n\n## Step 1: [Concise description]\n[Brief explanation and calculations]\n\n## Step 2: [Concise description]\n[Brief explanation and calculations]\n\n...\n\nRegardless of the approach, always conclude with:\n\nTherefore, the final answer is: $\\boxed{answer}$. I hope it is correct.\n\nWhere [answer] is just the final number or expression that solves the problem.', user_prompt_guide_1='{problem}\n\nGoal: {guide_small}', user_prompt_guide_2='{problem}\n\nGoal: {guide_small}\n\nGuideline: {guide_big}', user_prompt_guide_3='{problem}\n\nGuideline: {guide_big}', custom_chat_template=None, n=1, temperature_big=0, temperature_small=0.8, top_p=1.0, prm_batch_size=4, search_batch_size=2, seed=0, max_tokens=2048, agg_strategy='last', beam_width=4, num_iterations=40, lookahead=1, filter_duplicates=True, sort_completed=True, max_workers=16, thresh=0.5), 'llm_big': <openai.OpenAI object at 0x7ffe3ef82a90>, 'llm_small': None} of the transform datasets.arrow_dataset.Dataset._map_single couldn't be hashed properly, a random hash was used instead. Make sure your transforms and parameters are serializable with pickle or dill for the dataset fingerprinting and caching to work. If you reuse this transform, the caching mechanism will consider it to be different from the previous calls and recompute everything. This warning is only shown once. Subsequent hashing failures won't be shown.
+Running search:   0%|          | 0/50 [00:00<?, ? examples/s]INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+Running search:   4%|▍         | 2/50 [00:02<00:49,  1.03s/ examples]INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+Running search:   8%|▊         | 4/50 [00:03<00:38,  1.21 examples/s]INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+Running search:  12%|█▏        | 6/50 [00:04<00:34,  1.27 examples/s]INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+Running search:  16%|█▌        | 8/50 [00:07<00:38,  1.10 examples/s]INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+Running search:  20%|██        | 10/50 [00:17<01:36,  2.40s/ examples]INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+Running search:  24%|██▍       | 12/50 [00:24<01:48,  2.85s/ examples]INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+Running search:  28%|██▊       | 14/50 [00:26<01:21,  2.28s/ examples]INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+Running search:  32%|███▏      | 16/50 [00:29<01:05,  1.92s/ examples]INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+Running search:  36%|███▌      | 18/50 [00:32<00:56,  1.77s/ examples]INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+Running search:  40%|████      | 20/50 [00:39<01:10,  2.34s/ examples]INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+Running search:  44%|████▍     | 22/50 [00:42<00:59,  2.11s/ examples]INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+Running search:  48%|████▊     | 24/50 [00:46<00:52,  2.01s/ examples]INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+Running search:  52%|█████▏    | 26/50 [00:48<00:43,  1.83s/ examples]INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+Running search:  56%|█████▌    | 28/50 [00:51<00:35,  1.63s/ examples]INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+Running search:  60%|██████    | 30/50 [00:52<00:25,  1.29s/ examples]INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+Running search:  64%|██████▍   | 32/50 [00:53<00:19,  1.06s/ examples]INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+Running search:  68%|██████▊   | 34/50 [00:55<00:16,  1.01s/ examples]INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+Running search:  72%|███████▏  | 36/50 [00:57<00:14,  1.04s/ examples]INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+Running search:  76%|███████▌  | 38/50 [01:00<00:13,  1.16s/ examples]INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+Running search:  80%|████████  | 40/50 [01:01<00:09,  1.05 examples/s]INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+Running search:  84%|████████▍ | 42/50 [01:06<00:11,  1.46s/ examples]INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+Running search:  88%|████████▊ | 44/50 [01:12<00:12,  2.02s/ examples]INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+Running search:  92%|█████████▏| 46/50 [01:14<00:06,  1.62s/ examples]INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+Running search:  96%|█████████▌| 48/50 [01:17<00:03,  1.54s/ examples]INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx2:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+Running search: 100%|██████████| 50/50 [01:18<00:00,  1.27s/ examples]Running search: 100%|██████████| 50/50 [01:18<00:00,  1.57s/ examples]
+Map:   0%|          | 0/50 [00:00<?, ? examples/s]Map: 100%|██████████| 50/50 [00:00<00:00, 9136.32 examples/s]
+Computing majority & weighted predictions:   0%|          | 0/1 [00:00<?, ?it/s]
+Subsample 1:   0%|          | 0/50 [00:00<?, ? examples/s][ASubsample 1: 100%|██████████| 50/50 [00:00<00:00, 8813.78 examples/s]
+
+Extract answers 1:   0%|          | 0/50 [00:00<?, ? examples/s][AExtract answers 1: 100%|██████████| 50/50 [00:00<00:00, 1291.69 examples/s]
+
+Compute weighted pred 1:   0%|          | 0/50 [00:00<?, ? examples/s][A
+Compute weighted pred 1:  52%|█████▏    | 26/50 [00:00<00:00, 212.02 examples/s][ACompute weighted pred 1: 100%|██████████| 50/50 [00:00<00:00, 346.27 examples/s]
+
+Compute majority pred 1:   0%|          | 0/50 [00:00<?, ? examples/s][ACompute majority pred 1: 100%|██████████| 50/50 [00:00<00:00, 6399.61 examples/s]
+
+Compute naive pred 1:   0%|          | 0/50 [00:00<?, ? examples/s][ACompute naive pred 1: 100%|██████████| 50/50 [00:00<00:00, 7405.20 examples/s]
+Computing majority & weighted predictions: 100%|██████████| 1/1 [00:00<00:00,  4.84it/s]Computing majority & weighted predictions: 100%|██████████| 1/1 [00:00<00:00,  4.84it/s]
+Creating json from Arrow format:   0%|          | 0/1 [00:00<?, ?ba/s]Creating json from Arrow format: 100%|██████████| 1/1 [00:00<00:00, 295.02ba/s]
+INFO:root:Saved completions to outputs/cs470/math500_big.jsonl
+INFO:__main__:Done 🔥!

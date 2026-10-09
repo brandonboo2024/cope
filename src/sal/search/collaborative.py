@@ -28,7 +28,9 @@ def get_resp(config, llm_big, conv, temperature):
         model=config.model_path_big,
         temperature=temperature,
         max_tokens=config.max_tokens,
-        messages=conv
+        messages=conv,
+        # cs470: DeepSeek V4.1 Flash thinks by default; the proposal pilot disabled it.
+        extra_body=None if config.big_thinking else {"thinking": {"type": "disabled"}},
     )
     return resp
 

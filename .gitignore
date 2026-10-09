@@ -11,6 +11,7 @@ __pycache__/
 venv/
 env/
 
-outputs/
+outputs/*
+!outputs/cs470/
 .agents/
 .codex/

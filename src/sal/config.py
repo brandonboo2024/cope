@@ -23,7 +23,10 @@ from sal.utils.hub import get_dataset_revisions
 
 @dataclass
 class Config:
-    approach: Literal["best_of_n", "beam_search", "dvts", "collaborative"] = "best_of_n"
+    approach: Literal["best_of_n", "beam_search", "dvts", "collaborative", "direct"] = "best_of_n"
+    direct_model: Literal["small", "big"] = "small"  # cs470: which model the "direct" approach uses
+    big_thinking: bool = False  # cs470: DeepSeek V4.1 Flash thinking mode (off, as in the proposal pilot)
+    enforce_eager: bool = False  # cs470: skip torch.compile (needs /sbin/ldconfig, absent on NixOS)
     model_path_big: str = "gpt-4o-mini"
     model_path_small: str = "Qwen/Qwen2.5-1.5B-Instruct"
     gpu_memory_utilization: float = (

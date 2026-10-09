@@ -21,7 +21,7 @@ from vllm import LLM
 
 from sal.config import Config
 from sal.models.reward_models import load_prm
-from sal.search import beam_search, best_of_n, dvts, collaborative
+from sal.search import beam_search, best_of_n, dvts, collaborative, direct
 from sal.utils.data import get_dataset, save_dataset
 from sal.utils.parser import H4ArgumentParser
 from sal.utils.score import score
@@ -38,6 +38,7 @@ APPROACHES = {
     "dvts": dvts,
     "best_of_n": best_of_n,
     "collaborative": collaborative,
+    "direct": direct,
 }
 
 
@@ -54,13 +55,15 @@ def main():
         base_url=os.environ.get("OPENAI_BASE_URL"),
     )
 
+    # cs470: the big-model-only baseline needs no local model.
+    needs_small = not (config.approach == "direct" and config.direct_model == "big")
     llm_small = LLM(
         model=config.model_path_small,
         gpu_memory_utilization=config.gpu_memory_utilization,
-        enable_prefix_caching=True,
+        enable_prefix_caching=True, enforce_eager=config.enforce_eager,
         seed=config.seed,
         tensor_parallel_size=tensor_parallel_size,
-    )
+    ) if needs_small else None
 
     dataset = get_dataset(config)
     dataset = dataset.map(

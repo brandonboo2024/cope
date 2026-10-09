@@ -1,0 +1,140 @@
+(MainProcess pid=56032) INFO 10-09 16:27:01 [api_utils.py:286] non-default args: {'enable_prefix_caching': True, 'gpu_memory_utilization': 0.85, 'disable_log_stats': True, 'enforce_eager': True, 'model': 'Qwen/Qwen2.5-1.5B-Instruct'}
+(MainProcess pid=56032) INFO 10-09 16:27:02 [model.py:699] Resolved architecture: Qwen2ForCausalLM
+(MainProcess pid=56032) INFO 10-09 16:27:02 [model.py:2109] Using max model len 32768
+(MainProcess pid=56032) INFO 10-09 16:27:02 [scheduler.py:308] Chunked prefill is enabled with max_num_batched_tokens=8192.
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+(MainProcess pid=56032) WARNING 10-09 16:27:03 [vllm.py:1706] Enforce eager set, disabling torch.compile, CUDAGraphs, and JIT kernel warmup. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none and --kernel_config.enable_jit_warmup=False
+(MainProcess pid=56032) WARNING 10-09 16:27:03 [vllm.py:1750] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+(MainProcess pid=56032) INFO 10-09 16:27:03 [kernel.py:408] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'], gelu_and_mul_sparse=['triton', 'native'])
+(MainProcess pid=56032) INFO 10-09 16:27:03 [vllm.py:1968] Cudagraph is disabled under eager mode
+(MainProcess pid=56032) INFO 10-09 16:27:03 [compilation.py:331] Enabled custom fusions: norm_quant, act_quant
+(EngineCore pid=56327) INFO 10-09 16:27:05 [core.py:129] Initializing a V1 LLM engine (v0.31.0) with config: model='Qwen/Qwen2.5-1.5B-Instruct', speculative_config=None, tokenizer='Qwen/Qwen2.5-1.5B-Instruct', skip_tokenizer_init=False, tokenizer_mode=auto, revision=main, tokenizer_revision=main, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=32768, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, decode_context_parallel_size=1, dcp_comm_backend=ag_rs, disable_custom_all_reduce=False, quantization=None, quantization_config=None, enforce_eager=True, aux_output_config=AuxOutputConfig(enable_return_routed_experts=False, max_bytes=None), kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, per_request_spec_decode_metrics='none', kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False, jit_monitor_mode='warn', jit_monitor_verbose=False), seed=0, served_model_name=Qwen/Qwen2.5-1.5B-Instruct, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'mode': <CompilationMode.NONE: 0>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['all'], 'ir_enable_torch_wrap': False, 'splitting_ops': [], 'compile_mm_encoder': False, 'cudagraph_mm_encoder': False, 'encoder_cudagraph_token_budgets': [], 'encoder_cudagraph_max_vision_items_per_batch': 0, 'encoder_cudagraph_max_frames_per_batch': None, 'compile_sizes': [], 'compile_ranges_endpoints': [8192], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.NONE: 0>, 'cudagraph_num_of_warmups': 0, 'cudagraph_capture_sizes': [], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': True, 'fuse_act_quant': True, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False, 'enable_qk_norm_rope_fusion': False, 'fuse_rope_kvcache_cat_mla': False, 'fuse_act_padding': False, 'fuse_qk_norm_rope_kvcache': False}, 'max_cudagraph_capture_size': 0, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': False, 'static_all_moe_layers': []}, kernel_config=KernelConfig(ir_op_priority=IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'], gelu_and_mul_sparse=['triton', 'native']), enable_flashinfer_autotune=True, enable_cutedsl_warmup=True, enable_jit_warmup=False, moe_backend='auto', sparse_indexer_topk_backend='auto', linear_backend='auto', linear_backend_per_quant=None)
+(EngineCore pid=56327) INFO 10-09 16:27:05 [parallel_state.py:1825] world_size=1 rank=0 local_rank=0 distributed_init_method=file:///tmp/nix-shell.GPLlEN/vllm_dist_0aecdb137d38422f95d79827e9f4ce67 backend=nccl
+(EngineCore pid=56327) INFO 10-09 16:27:05 [parallel_state.py:2269] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, ETP rank 0, EP rank N/A, EPLB rank N/A
+(EngineCore pid=56327) INFO 10-09 16:27:05 [gpu_worker.py:479] Using V2 Model Runner
+(EngineCore pid=56327) INFO 10-09 16:27:06 [model_runner.py:375] Loading model from scratch...
+(EngineCore pid=56327) INFO 10-09 16:27:06 [cuda.py:526] Using FLASH_ATTN attention backend out of potential backends: ['FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION'].
+(EngineCore pid=56327) INFO 10-09 16:27:06 [flash_attn.py:1167] Using FlashAttention version 2
+(EngineCore pid=56327) INFO 10-09 16:27:07 [weight_utils.py:1063] Filesystem type for checkpoints: BTRFS. Checkpoint size: 2.88 GiB. Available RAM: 20.85 GiB.
+(EngineCore pid=56327) INFO 10-09 16:27:07 [weight_utils.py:1086] Auto-prefetch is disabled because the filesystem (BTRFS) is not a recognized network FS (NFS/Lustre). If you want to force prefetching, start vLLM with --safetensors-load-strategy=prefetch.
+Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  4.01it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  4.01it/s]
+
+(EngineCore pid=56327) INFO 10-09 16:27:07 [default_loader.py:484] Loading weights took 0.28 seconds
+(EngineCore pid=56327) INFO 10-09 16:27:08 [model_runner.py:407] Model loading took 2.98 GiB memory and 2.004291 seconds
+(EngineCore pid=56327) INFO 10-09 16:27:08 [topk_topp_sampler.py:124] Using FlashInfer for top-p & top-k sampling.
+(EngineCore pid=56327) INFO 10-09 16:27:08 [torch_utils.py:286] Reducing Torch threads from 8 to 1 for serving. Set OMP_NUM_THREADS in the external environment to override.
+(EngineCore pid=56327) INFO 10-09 16:27:08 [utils.py:343] Using LBNHC KV cache layout.
+(EngineCore pid=56327) INFO 10-09 16:27:09 [gpu_worker.py:692] Available KV cache memory: 9.31 GiB
+(EngineCore pid=56327) INFO 10-09 16:27:09 [kv_cache_utils.py:2464] GPU KV cache size: 348,784 tokens, Maximum concurrency for 32,768 tokens per request: 10.64x
+(EngineCore pid=56327) INFO 10-09 16:27:09 [gpu_worker.py:955] Free memory on device (14.25/15.47 GiB) on startup. Desired GPU memory utilization is (0.85, 13.15 GiB). Actual usage is 3.33 GiB for consumed memory (weights + non-torch), 0.5 GiB for peak activation, and 0.0 GiB for CUDAGraph memory. Replace gpu_memory_utilization config with `--kv-cache-memory=9843469824` (9.17 GiB) to fit into requested memory, or `--kv-cache-memory=11031145984` (10.27 GiB) to fully utilize gpu memory. Current kv cache memory in use is 9.31 GiB.
+(EngineCore pid=56327) INFO 10-09 16:27:09 [core.py:380] init engine (profile, create kv cache, warmup model) took 1.46 s
+(EngineCore pid=56327) INFO 10-09 16:27:09 [kernel.py:408] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'], gelu_and_mul_sparse=['triton', 'native'])
+(MainProcess pid=56032) INFO 10-09 16:27:11 [hf.py:646] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+Parameter 'fn_kwargs'={'config': Config(approach='collaborative', direct_model='small', big_thinking=False, enforce_eager=True, model_path_big='deepseek-flash', model_path_small='Qwen/Qwen2.5-1.5B-Instruct', gpu_memory_utilization=0.85, tensor_parallel_size=1, prm_path='RLHFlow/Llama3.1-8B-PRM-Deepseek-Data', output_dir=None, output_path='outputs/cs470/math500_cope.jsonl', num_proc=None, push_to_hub=False, hub_dataset_id=None, hub_dataset_private=False, overwrite_hub_revision=False, apply_voting=True, dataset_name='HuggingFaceH4/MATH-500', dataset_split='test', dataset_config=None, dataset_start=None, dataset_end=None, num_samples=50, system_prompt_guide_big='You are a skilled math coach.\nExplain how to solve the following math problem.\nFocus on strategy and key ideas.\nRespond in just one or two sentences. Return only the guidelines as plain text.', system_prompt_guide_small='You are a math teacher.\nState the goal of the following math problem in one sentence.', system_prompt='Solve the following math problem efficiently and clearly:\n\n- For simple problems (2 steps or fewer):\nProvide a concise solution with minimal explanation.\n\n- For complex problems (3 steps or more):\nUse this step-by-step format:\n\n## Step 1: [Concise description]\n[Brief explanation and calculations]\n\n## Step 2: [Concise description]\n[Brief explanation and calculations]\n\n...\n\nRegardless of the approach, always conclude with:\n\nTherefore, the final answer is: $\\boxed{answer}$. I hope it is correct.\n\nWhere [answer] is just the final number or expression that solves the problem.', user_prompt_guide_1='{problem}\n\nGoal: {guide_small}', user_prompt_guide_2='{problem}\n\nGoal: {guide_small}\n\nGuideline: {guide_big}', user_prompt_guide_3='{problem}\n\nGuideline: {guide_big}', custom_chat_template=None, n=8, temperature_big=0, temperature_small=0.8, top_p=1.0, prm_batch_size=4, search_batch_size=2, seed=0, max_tokens=2048, agg_strategy='last', beam_width=4, num_iterations=40, lookahead=1, filter_duplicates=True, sort_completed=True, max_workers=16, thresh=0.5), 'llm_big': <openai.OpenAI object at 0x7ffe43e17690>, 'llm_small': Qwen2ForCausalLM()(
+  (model): Qwen2Model()(
+    (embed_tokens): VocabParallelEmbedding(num_embeddings=151936, num_embeddings_per_partition=151936, embedding_dim=1536, org_vocab_size=151936, num_embeddings_padded=151936, tp_size=1)
+    (layers): ModuleList()(
+      (0-27): 28 x Qwen2DecoderLayer()(
+        (self_attn): Qwen2Attention()(
+          (qkv_proj): QKVParallelLinear(in_features=1536, output_features=2048, bias=True, tp_size=1, gather_output=False)
+          (o_proj): RowParallelLinear(in_features=1536, output_features=1536, bias=False, tp_size=1, reduce_results=True)
+          (rotary_emb): RotaryEmbedding(head_size=128, rotary_dim=128, max_position_embeddings=32768, base=1000000.0, is_neox_style=True)(
+            (apply_rotary_emb): ApplyRotaryEmb(is_neox_style=True, enable_fp32_compute=False)
+          )
+          (attn): Attention(head_size=128, num_heads=12, num_kv_heads=2, scale=0.08838834764831845, backend=FlashAttentionImpl)
+        )
+        (mlp): Qwen2MLP()(
+          (gate_up_proj): MergedColumnParallelLinear(in_features=1536, output_features=17920, bias=False, tp_size=1, gather_output=False)
+          (down_proj): RowParallelLinear(in_features=8960, output_features=1536, bias=False, tp_size=1, reduce_results=True)
+          (act_fn): SiluAndMul()
+        )
+        (input_layernorm): RMSNorm(hidden_size=1536, eps=1e-06)
+        (post_attention_layernorm): RMSNorm(hidden_size=1536, eps=1e-06)
+      )
+    )
+    (norm): RMSNorm(hidden_size=1536, eps=1e-06)
+  )
+  (lm_head): ParallelLMHead(num_embeddings=151936, num_embeddings_per_partition=151936, embedding_dim=1536, org_vocab_size=151936, num_embeddings_padded=151936, tp_size=1)
+  (logits_processor): LogitsProcessor(vocab_size=151936, org_vocab_size=151936, scale=1.0, logits_as_input=False)
+)} of the transform datasets.arrow_dataset.Dataset._map_single couldn't be hashed properly, a random hash was used instead. Make sure your transforms and parameters are serializable with pickle or dill for the dataset fingerprinting and caching to work. If you reuse this transform, the caching mechanism will consider it to be different from the previous calls and recompute everything. This warning is only shown once. Subsequent hashing failures won't be shown.
+WARNING:datasets.fingerprint:Parameter 'fn_kwargs'={'config': Config(approach='collaborative', direct_model='small', big_thinking=False, enforce_eager=True, model_path_big='deepseek-flash', model_path_small='Qwen/Qwen2.5-1.5B-Instruct', gpu_memory_utilization=0.85, tensor_parallel_size=1, prm_path='RLHFlow/Llama3.1-8B-PRM-Deepseek-Data', output_dir=None, output_path='outputs/cs470/math500_cope.jsonl', num_proc=None, push_to_hub=False, hub_dataset_id=None, hub_dataset_private=False, overwrite_hub_revision=False, apply_voting=True, dataset_name='HuggingFaceH4/MATH-500', dataset_split='test', dataset_config=None, dataset_start=None, dataset_end=None, num_samples=50, system_prompt_guide_big='You are a skilled math coach.\nExplain how to solve the following math problem.\nFocus on strategy and key ideas.\nRespond in just one or two sentences. Return only the guidelines as plain text.', system_prompt_guide_small='You are a math teacher.\nState the goal of the following math problem in one sentence.', system_prompt='Solve the following math problem efficiently and clearly:\n\n- For simple problems (2 steps or fewer):\nProvide a concise solution with minimal explanation.\n\n- For complex problems (3 steps or more):\nUse this step-by-step format:\n\n## Step 1: [Concise description]\n[Brief explanation and calculations]\n\n## Step 2: [Concise description]\n[Brief explanation and calculations]\n\n...\n\nRegardless of the approach, always conclude with:\n\nTherefore, the final answer is: $\\boxed{answer}$. I hope it is correct.\n\nWhere [answer] is just the final number or expression that solves the problem.', user_prompt_guide_1='{problem}\n\nGoal: {guide_small}', user_prompt_guide_2='{problem}\n\nGoal: {guide_small}\n\nGuideline: {guide_big}', user_prompt_guide_3='{problem}\n\nGuideline: {guide_big}', custom_chat_template=None, n=8, temperature_big=0, temperature_small=0.8, top_p=1.0, prm_batch_size=4, search_batch_size=2, seed=0, max_tokens=2048, agg_strategy='last', beam_width=4, num_iterations=40, lookahead=1, filter_duplicates=True, sort_completed=True, max_workers=16, thresh=0.5), 'llm_big': <openai.OpenAI object at 0x7ffe43e17690>, 'llm_small': Qwen2ForCausalLM()(
+  (model): Qwen2Model()(
+    (embed_tokens): VocabParallelEmbedding(num_embeddings=151936, num_embeddings_per_partition=151936, embedding_dim=1536, org_vocab_size=151936, num_embeddings_padded=151936, tp_size=1)
+    (layers): ModuleList()(
+      (0-27): 28 x Qwen2DecoderLayer()(
+        (self_attn): Qwen2Attention()(
+          (qkv_proj): QKVParallelLinear(in_features=1536, output_features=2048, bias=True, tp_size=1, gather_output=False)
+          (o_proj): RowParallelLinear(in_features=1536, output_features=1536, bias=False, tp_size=1, reduce_results=True)
+          (rotary_emb): RotaryEmbedding(head_size=128, rotary_dim=128, max_position_embeddings=32768, base=1000000.0, is_neox_style=True)(
+            (apply_rotary_emb): ApplyRotaryEmb(is_neox_style=True, enable_fp32_compute=False)
+          )
+          (attn): Attention(head_size=128, num_heads=12, num_kv_heads=2, scale=0.08838834764831845, backend=FlashAttentionImpl)
+        )
+        (mlp): Qwen2MLP()(
+          (gate_up_proj): MergedColumnParallelLinear(in_features=1536, output_features=17920, bias=False, tp_size=1, gather_output=False)
+          (down_proj): RowParallelLinear(in_features=8960, output_features=1536, bias=False, tp_size=1, reduce_results=True)
+          (act_fn): SiluAndMul()
+        )
+        (input_layernorm): RMSNorm(hidden_size=1536, eps=1e-06)
+        (post_attention_layernorm): RMSNorm(hidden_size=1536, eps=1e-06)
+      )
+    )
+    (norm): RMSNorm(hidden_size=1536, eps=1e-06)
+  )
+  (lm_head): ParallelLMHead(num_embeddings=151936, num_embeddings_per_partition=151936, embedding_dim=1536, org_vocab_size=151936, num_embeddings_padded=151936, tp_size=1)
+  (logits_processor): LogitsProcessor(vocab_size=151936, org_vocab_size=151936, scale=1.0, logits_as_input=False)
+)} of the transform datasets.arrow_dataset.Dataset._map_single couldn't be hashed properly, a random hash was used instead. Make sure your transforms and parameters are serializable with pickle or dill for the dataset fingerprinting and caching to work. If you reuse this transform, the caching mechanism will consider it to be different from the previous calls and recompute everything. This warning is only shown once. Subsequent hashing failures won't be shown.
+Running search:   0%|          | 0/50 [00:00<?, ? examples/s]Running search:   4%|▍         | 2/50 [00:17<07:05,  8.86s/ examples]Running search:   8%|▊         | 4/50 [00:40<07:57, 10.38s/ examples]Running search:  12%|█▏        | 6/50 [00:49<05:33,  7.57s/ examples]Running search:  16%|█▌        | 8/50 [01:08<05:54,  8.45s/ examples]Running search:  20%|██        | 10/50 [01:35<06:49, 10.25s/ examples]Running search:  24%|██▍       | 12/50 [02:02<07:09, 11.30s/ examples]Running search:  28%|██▊       | 14/50 [02:12<05:31,  9.21s/ examples]Running search:  32%|███▏      | 16/50 [02:26<04:52,  8.59s/ examples]Running search:  36%|███▌      | 18/50 [02:38<04:06,  7.71s/ examples]Running search:  40%|████      | 20/50 [03:06<04:51,  9.72s/ examples]Running search:  44%|████▍     | 22/50 [03:22<04:15,  9.12s/ examples]Running search:  48%|████▊     | 24/50 [03:41<04:01,  9.30s/ examples]Running search:  52%|█████▏    | 26/50 [03:58<03:38,  9.12s/ examples]Running search:  56%|█████▌    | 28/50 [04:18<03:24,  9.32s/ examples]Running search:  60%|██████    | 30/50 [04:25<02:31,  7.57s/ examples]Running search:  64%|██████▍   | 32/50 [04:32<01:55,  6.42s/ examples]Running search:  68%|██████▊   | 34/50 [04:43<01:38,  6.13s/ examples]Running search:  72%|███████▏  | 36/50 [04:53<01:20,  5.73s/ examples]Running search:  76%|███████▌  | 38/50 [05:07<01:12,  6.08s/ examples]Running search:  80%|████████  | 40/50 [05:14<00:52,  5.29s/ examples]Running search:  84%|████████▍ | 42/50 [05:28<00:47,  5.91s/ examples]Running search:  88%|████████▊ | 44/50 [05:52<00:46,  7.68s/ examples]Running search:  92%|█████████▏| 46/50 [06:05<00:29,  7.28s/ examples]Running search:  96%|█████████▌| 48/50 [06:15<00:13,  6.70s/ examples]Running search: 100%|██████████| 50/50 [06:20<00:00,  5.31s/ examples]Running search: 100%|██████████| 50/50 [06:20<00:00,  7.60s/ examples]
+Map:   0%|          | 0/50 [00:00<?, ? examples/s]Map: 100%|██████████| 50/50 [00:00<00:00, 8597.70 examples/s]
+Computing majority & weighted predictions:   0%|          | 0/4 [00:00<?, ?it/s]
+Subsample 1:   0%|          | 0/50 [00:00<?, ? examples/s][ASubsample 1: 100%|██████████| 50/50 [00:00<00:00, 8453.19 examples/s]
+
+Extract answers 1:   0%|          | 0/50 [00:00<?, ? examples/s][AExtract answers 1: 100%|██████████| 50/50 [00:00<00:00, 1659.80 examples/s]
+
+Compute weighted pred 1:   0%|          | 0/50 [00:00<?, ? examples/s][ACompute weighted pred 1: 100%|██████████| 50/50 [00:00<00:00, 4371.34 examples/s]
+
+Compute majority pred 1:   0%|          | 0/50 [00:00<?, ? examples/s][ACompute majority pred 1: 100%|██████████| 50/50 [00:00<00:00, 6303.62 examples/s]
+
+Compute naive pred 1:   0%|          | 0/50 [00:00<?, ? examples/s][ACompute naive pred 1: 100%|██████████| 50/50 [00:00<00:00, 6966.36 examples/s]
+
+Subsample 2:   0%|          | 0/50 [00:00<?, ? examples/s][ASubsample 2: 100%|██████████| 50/50 [00:00<00:00, 7612.17 examples/s]
+
+Extract answers 2:   0%|          | 0/50 [00:00<?, ? examples/s][AExtract answers 2: 100%|██████████| 50/50 [00:00<00:00, 1636.11 examples/s]
+
+Compute weighted pred 2:   0%|          | 0/50 [00:00<?, ? examples/s][ACompute weighted pred 2: 100%|██████████| 50/50 [00:00<00:00, 5873.55 examples/s]
+
+Compute majority pred 2:   0%|          | 0/50 [00:00<?, ? examples/s][ACompute majority pred 2: 100%|██████████| 50/50 [00:00<00:00, 5859.93 examples/s]
+
+Compute naive pred 2:   0%|          | 0/50 [00:00<?, ? examples/s][ACompute naive pred 2: 100%|██████████| 50/50 [00:00<00:00, 6412.13 examples/s]
+Computing majority & weighted predictions:  50%|█████     | 2/4 [00:00<00:00, 15.27it/s]
+Subsample 4:   0%|          | 0/50 [00:00<?, ? examples/s][ASubsample 4: 100%|██████████| 50/50 [00:00<00:00, 6804.74 examples/s]
+
+Extract answers 4:   0%|          | 0/50 [00:00<?, ? examples/s][AExtract answers 4: 100%|██████████| 50/50 [00:00<00:00, 1592.66 examples/s]
+
+Compute weighted pred 4:   0%|          | 0/50 [00:00<?, ? examples/s][ACompute weighted pred 4: 100%|██████████| 50/50 [00:00<00:00, 5126.51 examples/s]
+
+Compute majority pred 4:   0%|          | 0/50 [00:00<?, ? examples/s][ACompute majority pred 4: 100%|██████████| 50/50 [00:00<00:00, 5265.39 examples/s]
+
+Compute naive pred 4:   0%|          | 0/50 [00:00<?, ? examples/s][ACompute naive pred 4: 100%|██████████| 50/50 [00:00<00:00, 5869.61 examples/s]
+
+Subsample 8:   0%|          | 0/50 [00:00<?, ? examples/s][ASubsample 8: 100%|██████████| 50/50 [00:00<00:00, 6219.68 examples/s]
+
+Extract answers 8:   0%|          | 0/50 [00:00<?, ? examples/s][AExtract answers 8: 100%|██████████| 50/50 [00:00<00:00, 1551.53 examples/s]
+
+Compute weighted pred 8:   0%|          | 0/50 [00:00<?, ? examples/s][ACompute weighted pred 8: 100%|██████████| 50/50 [00:00<00:00, 4882.43 examples/s]
+
+Compute majority pred 8:   0%|          | 0/50 [00:00<?, ? examples/s][ACompute majority pred 8: 100%|██████████| 50/50 [00:00<00:00, 4933.78 examples/s]
+
+Compute naive pred 8:   0%|          | 0/50 [00:00<?, ? examples/s][ACompute naive pred 8: 100%|██████████| 50/50 [00:00<00:00, 5423.48 examples/s]
+Computing majority & weighted predictions: 100%|██████████| 4/4 [00:00<00:00, 14.47it/s]Computing majority & weighted predictions: 100%|██████████| 4/4 [00:00<00:00, 14.58it/s]
+Creating json from Arrow format:   0%|          | 0/1 [00:00<?, ?ba/s]Creating json from Arrow format: 100%|██████████| 1/1 [00:00<00:00, 220.65ba/s]
+INFO:root:Saved completions to outputs/cs470/math500_cope.jsonl
+INFO:__main__:Done 🔥!
+(MainProcess pid=56032) INFO 10-09 16:33:34 [utils.py:638] [shutdown] Process manager: send sigterm to process EngineCore
+(EngineCore pid=56327) INFO 10-09 16:33:34 [core.py:1409] [shutdown] EngineCore: trigger received signal=SIGTERM
+(EngineCore pid=56327) INFO 10-09 16:33:34 [core.py:1558] [shutdown] EngineCore: start mode=abort timeout=0s
+(EngineCore pid=56327) INFO 10-09 16:33:34 [core.py:1589] [shutdown] EngineCore: request processing complete; starting resource teardown
+(EngineCore pid=56327) INFO 10-09 16:33:34 [core.py:1422] [shutdown] EngineCore: exiting busy loop
