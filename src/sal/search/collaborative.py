@@ -18,6 +18,7 @@ from vllm import SamplingParams
 from sal.config import Config
 from sal.utils.math import extract_completion_answers, memoized_canonical_form
 from typing import List
+import json
 import random
 from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
@@ -38,6 +39,7 @@ def get_resp(config, llm_big, conv, temperature):
 def extract_preds_from_compl(completions_group: List[List[str]], guides_group: List[List[str]], thresh):
     preds_selected = []
     guides_selected = []
+    votes = []  # cs470: the vote behind each decision, for the stage log
 
     for completions, guides in zip(completions_group, guides_group):
         answers = extract_completion_answers({"completions": completions})["preds"]
@@ -48,15 +50,17 @@ def extract_preds_from_compl(completions_group: List[List[str]], guides_group: L
         ratio = count / len(answers)
 
         if ratio > thresh:
-            candidates = [(comp, guide) for comp, guide, ans in zip(completions, guides, answers) if ans == majority_answer]
-            pred_selected, guide_selected = random.choice(candidates)
+            candidates = [(i, comp, guide) for i, (comp, guide, ans) in enumerate(zip(completions, guides, answers)) if ans == majority_answer]
+            chosen, pred_selected, guide_selected = random.choice(candidates)
         else:
-            pred_selected, guide_selected = None, None
+            chosen, pred_selected, guide_selected = None, None, None
 
         preds_selected.append(pred_selected)
         guides_selected.append(guide_selected)
+        votes.append({"answers": answers, "counts": counts.most_common(), "majority": majority_answer,
+                      "share": ratio, "threshold": thresh, "accepted": ratio > thresh, "chosen": chosen})
 
-    return preds_selected, guides_selected
+    return preds_selected, guides_selected, votes
 
 
 def get_active_idxs_and_probs(items):
@@ -86,6 +90,9 @@ def _string_or_empty(value):
 
 def finalize_outputs(x, items):
     preds = [_string_or_empty(item["pred"]) for item in items]
+    # cs470: every stage's prompts, outputs and votes, as a JSON string per task
+    # (a string keeps the dataset schema fixed whichever stages ran).
+    x["stages"] = [json.dumps(item["stages"]) for item in items]
 
     x["guide_big"] = [_string_or_empty(item["guide_big"]) for item in items]
     x["guides_small"] = [
@@ -105,15 +112,20 @@ def finalize_outputs(x, items):
     return x
 
 
-def generate_big(convs, config, llm_big, idxs, items, temperature, target):
+def generate_big(convs, config, llm_big, idxs, items, temperature, target, stage):
     with ThreadPoolExecutor(max_workers=config.max_workers) as executor:
         responses = list(executor.map(lambda conv: get_resp(config, llm_big, conv, temperature), convs))
 
-    for idx, resp in zip(idxs, responses):
+    for idx, conv, resp in zip(idxs, convs, responses):
         items[idx]["big_in"]  += resp.usage.prompt_tokens
         items[idx]["big_out"] += resp.usage.completion_tokens
 
         content = resp.choices[0].message.content
+        items[idx]["stages"].append({
+            "stage": stage, "model": "big", "temperature": temperature, "messages": [conv],
+            "outputs": [content], "finish_reasons": [resp.choices[0].finish_reason],
+            "output_tokens": [resp.usage.completion_tokens],
+        })
 
         if target == "guide":
             items[idx]["guide_big"] = content
@@ -131,7 +143,7 @@ def clean_output(text: str) -> str:
     return text.strip()
 
 
-def generate_small(convs, config, llm_small, idxs, items, temperature, target, duplicate, thresh=None):
+def generate_small(convs, config, llm_small, idxs, items, temperature, target, duplicate, stage, thresh=None):
     tokenizer = llm_small.get_tokenizer()
 
     if config.custom_chat_template is not None:
@@ -200,16 +212,31 @@ def generate_small(convs, config, llm_small, idxs, items, temperature, target, d
                 for output in r.outputs
             ]
 
+    # cs470: per-task slices of the prompts and responses, for the stage log.
+    per_task = len(responses) // len(idxs)
+    for i, idx in enumerate(idxs):
+        group = responses[i * per_task:(i + 1) * per_task]
+        prompts = convs if duplicate else convs[i * per_task:(i + 1) * per_task]
+        items[idx]["stages"].append({
+            "stage": stage, "model": "small", "temperature": temperature,
+            # one conversation if every sample shares it, else one per sample
+            "messages": [prompts[i]] if duplicate else prompts,
+            "outputs": completions_group[i],
+            "finish_reasons": [o.finish_reason for r in group for o in r.outputs],
+            "output_tokens": [len(o.token_ids) for r in group for o in r.outputs],
+        })
+
     if target == "guide":
         for idx, guides in zip(idxs, completions_group):
             items[idx]["guides_small"] = guides
     elif target == "pred":
         guides_group = [items[idx]["guides_small"] for idx in idxs]
-        preds, guides = extract_preds_from_compl(completions_group, guides_group, thresh)
+        preds, guides, votes = extract_preds_from_compl(completions_group, guides_group, thresh)
 
-        for idx, pred, guide in zip(idxs, preds, guides):
+        for idx, pred, guide, vote in zip(idxs, preds, guides, votes):
             items[idx]["pred"] = pred
             items[idx]["guide_small"] = guide
+            items[idx]["stages"][-1]["vote"] = vote
 
     small_in, small_out = count_tokens_vllm(templated_convs, responses, config.n, tokenizer)
 
@@ -221,7 +248,7 @@ def generate_small(convs, config, llm_small, idxs, items, temperature, target, d
 
 
 def collaborative(x, config: Config, llm_big, llm_small):
-    items = [{"problem": problem, "pred": None, "guide_big": None, "guides_small": [""] * config.n, "guide_small": None, "small_in": 0, "small_out": 0, "big_in": 0, "big_out": 0, "round": None} for problem in x["problem"]]
+    items = [{"problem": problem, "pred": None, "guide_big": None, "guides_small": [""] * config.n, "guide_small": None, "small_in": 0, "small_out": 0, "big_in": 0, "big_out": 0, "round": None, "stages": []} for problem in x["problem"]]
 
     #################### ROUND 1 ###############################################################################
     idxs_active, probs_active = get_active_idxs_and_probs(items)
@@ -234,7 +261,7 @@ def collaborative(x, config: Config, llm_big, llm_small):
         for prob in probs_active
     ]
 
-    items = generate_small(convs_active, config, llm_small, idxs_active, items, temperature=0.8, target="guide", duplicate=True)
+    items = generate_small(convs_active, config, llm_small, idxs_active, items, temperature=0.8, target="guide", duplicate=True, stage="1a")
 
     guides_small_active = [items[idx]["guides_small"] for idx in idxs_active]
 
@@ -247,7 +274,7 @@ def collaborative(x, config: Config, llm_big, llm_small):
                 {"role": "user", "content": config.user_prompt_guide_1.format(problem=prob, guide_small=guide_small)},
             ])
 
-    items = generate_small(convs_active, config, llm_small, idxs_active, items, temperature=0.4, target="pred", duplicate=False, thresh=0.75)
+    items = generate_small(convs_active, config, llm_small, idxs_active, items, temperature=0.4, target="pred", duplicate=False, stage="1b", thresh=0.75)
 
     for idx in idxs_active:
         if items[idx]["pred"] is not None:
@@ -268,7 +295,7 @@ def collaborative(x, config: Config, llm_big, llm_small):
         for prob in probs_active
     ]
 
-    items = generate_big(convs_active, config, llm_big, idxs_active, items, temperature=0.8, target="guide")
+    items = generate_big(convs_active, config, llm_big, idxs_active, items, temperature=0.8, target="guide", stage="2a")
 
     guides_big_active = [items[idx]["guide_big"] for idx in idxs_active]
     guides_small_active = [items[idx]["guide_small"] for idx in idxs_active]
@@ -281,7 +308,7 @@ def collaborative(x, config: Config, llm_big, llm_small):
         for prob, guide_small, guide_big in zip(probs_active, guides_small_active, guides_big_active)
     ]
 
-    items = generate_small(convs_active, config, llm_small, idxs_active, items, temperature=0.8, target="pred", duplicate=True, thresh=0.5)
+    items = generate_small(convs_active, config, llm_small, idxs_active, items, temperature=0.8, target="pred", duplicate=True, stage="2b", thresh=0.5)
 
     for idx in idxs_active:
         if items[idx]["pred"] is not None:
@@ -302,7 +329,7 @@ def collaborative(x, config: Config, llm_big, llm_small):
         for idx, prob in zip(idxs_active, probs_active)
     ]
 
-    items = generate_big(convs_active, config, llm_big, idxs_active, items, temperature=0, target="pred")
+    items = generate_big(convs_active, config, llm_big, idxs_active, items, temperature=0, target="pred", stage="3")
 
     for idx in idxs_active:
         if items[idx]["pred"] is not None:

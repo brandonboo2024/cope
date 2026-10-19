@@ -7,6 +7,10 @@
 # MBPP's own reference solution passes both its public tests and its MBPP-ET
 # tests (checked before any model runs). The first `num_samples` eligible
 # tasks are used.
+#
+# cs470: COPE logs every stage (rec["stages"]); each candidate of a solving
+# stage is also run on the hidden tests here, so a stage shows how many of its
+# candidates were really correct, and the summary counts wrong accepts.
 
 import ast
 import json
@@ -17,7 +21,6 @@ from pathlib import Path
 
 from datasets import load_dataset
 from openai import OpenAI
-
 from sal.config import Config
 from sal.search.code import CODE_APPROACHES, extract_code, passes
 from sal.utils.parser import H4ArgumentParser
@@ -77,6 +80,11 @@ def main():
                    passes_public=passes(code, task["public_tests"], task["setup"]),
                    correct=passes(code, task["hidden_tests"], task["setup"], timeout=30),
                    usd=(rec["big_in"] * PRICE_IN + rec["big_out"] * PRICE_OUT) / 1e6)
+        for st in rec.get("stages", []):
+            if "vote" in st:
+                st["vote"]["passes_hidden"] = [
+                    passes(extract_code(c), task["hidden_tests"], task["setup"], timeout=30)
+                    for c in st["outputs"]]
         rows.append(rec)
         logger.info(f"{i}/{len(tasks)} task {task['task_id']}: round {rec['round']}, "
                     f"correct={rec['correct']}")
@@ -99,9 +107,33 @@ def summarise(rows, out_path, excluded):
         "big_tokens_per_task": (tot("big_in") + tot("big_out")) / n,
         "usd_total": tot("usd"),
         "rounds": {str(k): sum(r["round"] == k for r in rows) for k in (0, 1, 2, 3)},
+        "stage_checks": stage_checks(rows),
     }
     Path(out_path).with_suffix(".graded.json").write_text(json.dumps(summary, indent=1))
     logger.info(json.dumps({k: v for k, v in summary.items() if k != "excluded_task_ids"}))
+
+def stage_checks(rows):
+    """Per testing stage: accepted candidates that fail the hidden tests, and
+    rejected stages that had a hidden-correct candidate anyway."""
+    checks = {}
+    for r in rows:
+        for st in r.get("stages", []):
+            v = st.get("vote")
+            if not v:
+                continue
+            c = checks.setdefault(st["stage"], {"ran": 0, "accepted": 0, "accepted_wrong": 0,
+                                                "rejected_any_right": 0, "pass_public_fail_hidden": 0,
+                                                "candidates": 0, "capped_candidates": 0})
+            c["ran"] += 1
+            c["accepted"] += v["accepted"]
+            c["accepted_wrong"] += v["accepted"] and not v["passes_hidden"][v["chosen"]]
+            c["rejected_any_right"] += (not v["accepted"]) and any(v["passes_hidden"])
+            c["pass_public_fail_hidden"] += sum(p and not h for p, h in
+                                                zip(v["passes_public"], v["passes_hidden"]))
+            c["candidates"] += len(v["passes_public"])
+            c["capped_candidates"] += sum(f == "length" for f in st["finish_reasons"])
+    return checks
+
 
 if __name__ == "__main__":
     main()

@@ -53,7 +53,7 @@ def passes(code, tests, setup="", timeout=10):
 
 # --- model calls ---------------------------------------------------------------
 def small_generate(llm_small, config, convs, temperature, guide=False):
-    """One completion per conversation; returns texts and (in, out) token counts."""
+    """One completion per conversation; returns texts, (in, out) token counts and finish reasons."""
     tokenizer = llm_small.get_tokenizer()
     prompts = tokenizer.apply_chat_template(convs, tokenize=False, add_generation_prompt=True)
     prefix = "The goal"
@@ -68,13 +68,13 @@ def small_generate(llm_small, config, convs, temperature, guide=False):
     out = llm_small.generate(prompts, sampling_params=params, use_tqdm=False)
     texts = [clean_output((prefix if guide else "") + o.outputs[0].text) for o in out]
     tokens = [(len(o.prompt_token_ids), len(o.outputs[0].token_ids)) for o in out]
-    return texts, tokens
+    return texts, tokens, [o.outputs[0].finish_reason for o in out]
 
 
 def big_generate(llm_big, config, conv, temperature):
     resp = get_resp(config, llm_big, conv, temperature)
     return resp.choices[0].message.content or "", \
-        (resp.usage.prompt_tokens, resp.usage.completion_tokens)
+        (resp.usage.prompt_tokens, resp.usage.completion_tokens), resp.choices[0].finish_reason
 
 
 def conv(system, user):
@@ -83,48 +83,64 @@ def conv(system, user):
 
 # --- approaches ---------------------------------------------------------------
 def cope_code(task, config, llm_big, llm_small, rng):
-    """Run COPE's three stages on one MBPP task. Returns the record for the task."""
+    """Run COPE's three stages on one MBPP task. Returns the record for the task.
+
+    cs470: rec["stages"] logs every stage's prompts, outputs, finish reasons and,
+    for the solving stages, which candidates passed the public tests.
+    """
     rec = {"small_in": 0, "small_out": 0, "big_in": 0, "big_out": 0,
-           "guide_small": None, "guide_big": None}
+           "guide_small": None, "guide_big": None, "stages": []}
     problem, public = task["problem"], task["public_tests"]
 
-    def small(convs, temperature, guide=False):
-        texts, tokens = small_generate(llm_small, config, convs, temperature, guide)
+    def small(stage, convs, temperature, guide=False):
+        texts, tokens, finish = small_generate(llm_small, config, convs, temperature, guide)
         rec["small_in"] += sum(t[0] for t in tokens)
         rec["small_out"] += sum(t[1] for t in tokens)
+        same = all(c == convs[0] for c in convs)
+        rec["stages"].append({"stage": stage, "model": "small", "temperature": temperature,
+                              "messages": [convs[0]] if same else convs, "outputs": texts,
+                              "finish_reasons": finish, "output_tokens": [t[1] for t in tokens]})
         return texts
 
+    def big(stage, c, temperature):
+        text, tok, finish = big_generate(llm_big, config, c, temperature)
+        rec["big_in"] += tok[0]; rec["big_out"] += tok[1]
+        rec["stages"].append({"stage": stage, "model": "big", "temperature": temperature,
+                              "messages": [c], "outputs": [text], "finish_reasons": [finish],
+                              "output_tokens": [tok[1]]})
+        return text
+
     def accept(candidates, guides):
-        passing = [(c, g) for c, g in zip(candidates, guides)
-                   if passes(extract_code(c), public, task["setup"])]
-        return rng.choice(passing) if passing else (None, None)
+        ok = [passes(extract_code(c), public, task["setup"]) for c in candidates]
+        passing = [i for i, p in enumerate(ok) if p]
+        chosen = rng.choice(passing) if passing else None
+        rec["stages"][-1]["vote"] = {"passes_public": ok, "accepted": chosen is not None,
+                                     "chosen": chosen}
+        return (candidates[chosen], guides[chosen]) if passing else (None, None)
 
     # Stage 1: small model states n goals, then executes once per goal.
-    goals = small([conv(config.system_prompt_guide_small, problem)] * config.n, 0.8, guide=True)
-    cands = small([conv(config.system_prompt,
-                        config.user_prompt_guide_1.format(problem=problem, guide_small=g))
-                   for g in goals], 0.4)
+    goals = small("1a", [conv(config.system_prompt_guide_small, problem)] * config.n, 0.8, guide=True)
+    cands = small("1b", [conv(config.system_prompt,
+                              config.user_prompt_guide_1.format(problem=problem, guide_small=g))
+                         for g in goals], 0.4)
     pred, rec["guide_small"] = accept(cands, goals)
     if pred is not None:
         return {**rec, "pred": pred, "round": 1}
 
     # Stage 2: large model writes a guideline; small model executes n times.
     # As in the released maths code, a failed stage 1 leaves guide_small as None.
-    rec["guide_big"], tok = big_generate(
-        llm_big, config, conv(config.system_prompt_guide_big, problem), 0.8)
-    rec["big_in"] += tok[0]; rec["big_out"] += tok[1]
+    rec["guide_big"] = big("2a", conv(config.system_prompt_guide_big, problem), 0.8)
     prompt = config.user_prompt_guide_2.format(
         problem=problem, guide_small=rec["guide_small"], guide_big=rec["guide_big"])
-    cands = small([conv(config.system_prompt, prompt)] * config.n, 0.8)
+    cands = small("2b", [conv(config.system_prompt, prompt)] * config.n, 0.8)
     pred, _ = accept(cands, cands)
     if pred is not None:
         return {**rec, "pred": pred, "round": 2}
 
     # Stage 3: large model executes with its own guideline (greedy, no check).
-    pred, tok = big_generate(llm_big, config, conv(
+    pred = big("3", conv(
         config.system_prompt,
         config.user_prompt_guide_3.format(problem=problem, guide_big=rec["guide_big"])), 0)
-    rec["big_in"] += tok[0]; rec["big_out"] += tok[1]
     return {**rec, "pred": pred, "round": 3}
 
 
@@ -134,10 +150,10 @@ def direct_code(task, config, llm_big, llm_small, rng):
            "guide_small": None, "guide_big": None, "round": 0}
     c = conv(config.system_prompt, task["problem"])
     if config.direct_model == "big":
-        pred, tok = big_generate(llm_big, config, c, 0)
+        pred, tok, _ = big_generate(llm_big, config, c, 0)
         rec["big_in"], rec["big_out"] = tok
     else:
-        texts, tokens = small_generate(llm_small, config, [c], 0)
+        texts, tokens, _ = small_generate(llm_small, config, [c], 0)
         pred = texts[0]
         rec["small_in"], rec["small_out"] = tokens[0]
     return {**rec, "pred": pred}
@@ -147,10 +163,10 @@ def big_plan_code(task, config, llm_big, llm_small, rng):
     """Large model plans and executes: COPE's stage 3 for every task, no tests consulted."""
     rec = {"small_in": 0, "small_out": 0, "big_in": 0, "big_out": 0,
            "guide_small": None, "round": 0}
-    rec["guide_big"], tok = big_generate(
+    rec["guide_big"], tok, _ = big_generate(
         llm_big, config, conv(config.system_prompt_guide_big, task["problem"]), 0.8)
     rec["big_in"] += tok[0]; rec["big_out"] += tok[1]
-    pred, tok = big_generate(llm_big, config, conv(
+    pred, tok, _ = big_generate(llm_big, config, conv(
         config.system_prompt,
         config.user_prompt_guide_3.format(problem=task["problem"], guide_big=rec["guide_big"])), 0)
     rec["big_in"] += tok[0]; rec["big_out"] += tok[1]
