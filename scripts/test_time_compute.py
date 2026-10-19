@@ -65,6 +65,7 @@ def main():
         enable_prefix_caching=True, enforce_eager=config.enforce_eager,
         seed=config.seed,
         tensor_parallel_size=tensor_parallel_size,
+        **config.small_engine_kwargs,
     ) if needs_small else None
 
     dataset = get_dataset(config)

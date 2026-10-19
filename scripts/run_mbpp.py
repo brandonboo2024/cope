@@ -67,7 +67,8 @@ def main():
         from vllm import LLM
         llm_small = LLM(model=config.model_path_small,
                         gpu_memory_utilization=config.gpu_memory_utilization,
-                        enable_prefix_caching=True, enforce_eager=config.enforce_eager, seed=config.seed)
+                        enable_prefix_caching=True, enforce_eager=config.enforce_eager, seed=config.seed,
+                        **config.small_engine_kwargs)
 
     rng = random.Random(config.seed)
     out_path = Path(config.output_path)

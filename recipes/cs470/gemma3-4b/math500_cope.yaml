@@ -1,0 +1,32 @@
+# cs470: as ../math500_cope.yaml, with the small model replaced by Gemma 3 4B, Red Hat's FP8-dynamic build (8-bit; the 8 GB GPU cannot hold BF16).
+# Runs from .venv-vllm (vLLM 0.31): the COPE venv's vLLM 0.6.3 predates both models.
+# cs470: COPE (released collaborative approach) on the first 50 MATH-500 problems.
+# Settings follow the CS470 proposal pilot: 8 candidates, 2048-token cap, seed 0.
+approach: collaborative
+seed: 0
+sort_completed: true
+filter_duplicates: true
+
+model_path_big: deepseek-flash
+model_path_small: RedHatAI/gemma-3-4b-it-FP8-dynamic
+small_engine_kwargs:
+  revision: e8535f618f3ff62cd745395b05eb8cbde0851b71
+  max_model_len: 4096  # prompts are short; 2048-token output cap
+  kv_cache_dtype: fp8
+  attention_backend: TRITON_ATTN  # FlashInfer JIT-compiles with nvcc, absent here
+chat_template_kwargs:
+  enable_thinking: false
+custom_chat_template: null  # the model's own chat template
+
+dataset_name: HuggingFaceH4/MATH-500
+dataset_split: test
+num_samples: 50
+
+n: 8
+max_tokens: 2048
+search_batch_size: 2
+gpu_memory_utilization: 0.95
+enforce_eager: false  # .venv-vllm has the patched ptxas, so torch.compile works
+tensor_parallel_size: 1
+
+output_path: outputs/cs470/gemma3-4b/math500_cope.jsonl

@@ -1,0 +1,32 @@
+# cs470: as ../math500_cope.yaml, with the small model replaced by Qwen3-8B, Qwen's official AWQ 4-bit build; thinking off, as in every other run.
+# Runs from .venv-vllm (vLLM 0.31): the COPE venv's vLLM 0.6.3 predates both models.
+# cs470: COPE (released collaborative approach) on the first 50 MATH-500 problems.
+# Settings follow the CS470 proposal pilot: 8 candidates, 2048-token cap, seed 0.
+approach: collaborative
+seed: 0
+sort_completed: true
+filter_duplicates: true
+
+model_path_big: deepseek-flash
+model_path_small: Qwen/Qwen3-8B-AWQ
+small_engine_kwargs:
+  revision: 4da05a8edb55c6046cce958586c33b61da07bb79
+  max_model_len: 4096  # prompts are short; 2048-token output cap
+  kv_cache_dtype: fp8
+  attention_backend: TRITON_ATTN  # FlashInfer JIT-compiles with nvcc, absent here
+chat_template_kwargs:
+  enable_thinking: false
+custom_chat_template: null  # the model's own chat template
+
+dataset_name: HuggingFaceH4/MATH-500
+dataset_split: test
+num_samples: 50
+
+n: 8
+max_tokens: 2048
+search_batch_size: 2
+gpu_memory_utilization: 0.95  # 5.7 GiB of AWQ weights leave ~1 GiB for the KV cache
+enforce_eager: true  # CUDA graphs would leave no memory for the KV cache
+tensor_parallel_size: 1
+
+output_path: outputs/cs470/qwen3-8b/math500_cope.jsonl

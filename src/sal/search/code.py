@@ -55,7 +55,8 @@ def passes(code, tests, setup="", timeout=10):
 def small_generate(llm_small, config, convs, temperature, guide=False):
     """One completion per conversation; returns texts, (in, out) token counts and finish reasons."""
     tokenizer = llm_small.get_tokenizer()
-    prompts = tokenizer.apply_chat_template(convs, tokenize=False, add_generation_prompt=True)
+    prompts = tokenizer.apply_chat_template(convs, tokenize=False, add_generation_prompt=True,
+                                            **config.chat_template_kwargs)
     prefix = "The goal"
     if guide:
         prompts = [p + prefix for p in prompts]

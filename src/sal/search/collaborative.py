@@ -150,7 +150,7 @@ def generate_small(convs, config, llm_small, idxs, items, temperature, target, d
         tokenizer.chat_template = config.custom_chat_template
 
     templated_convs = tokenizer.apply_chat_template(
-        convs, tokenize=False, add_generation_prompt=True
+        convs, tokenize=False, add_generation_prompt=True, **config.chat_template_kwargs
     )
 
     if duplicate:

@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Literal
 
 from huggingface_hub import get_full_repo_name
@@ -29,6 +29,11 @@ class Config:
     enforce_eager: bool = False  # cs470: skip torch.compile (needs /sbin/ldconfig, absent on NixOS)
     model_path_big: str = "gpt-4o-mini"
     model_path_small: str = "Qwen/Qwen2.5-1.5B-Instruct"
+    # cs470: extra vLLM engine arguments for the small model (quantisation, KV cache
+    # dtype, attention backend, max_model_len) and extra chat-template arguments
+    # (e.g. enable_thinking: false for Qwen3).
+    small_engine_kwargs: dict = field(default_factory=dict)
+    chat_template_kwargs: dict = field(default_factory=dict)
     gpu_memory_utilization: float = (
         0.5  # vllm is allocated 0.5 of GPU memory, the PRM uses the rest
     )
