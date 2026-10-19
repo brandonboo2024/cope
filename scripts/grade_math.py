@@ -12,6 +12,7 @@
 # attempts were right, and the summary counts wrong accepts and wrong rejects.
 
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -21,6 +22,15 @@ PRICE_IN, PRICE_OUT = 0.30, 1.20  # DeepSeek Flash peak US$ per million tokens
 
 
 SOLVING = {"1b", "2b", "3", "direct", "solve"}
+
+# cs470: COPE's prompt ends with "...the final answer is $\boxed{answer}$. I hope it is
+# correct." A model that drops the $...$ (Gemma 3 does, often) gets the closing phrase
+# glued to its answer by the parser ("225Ihopeitiscorrect"), which then never matches.
+HOPE = re.compile(r"\.?\s*I\s*hope\s*it\s*is\s*correct\.?\s*$", re.I)
+
+
+def answer_of(text):
+    return HOPE.sub("", extract_answer(text, "math"))
 
 
 def is_correct(predicted, reference):
@@ -33,7 +43,7 @@ def grade_stages(r, reference):
     for st in json.loads(r.get("stages") or "[]"):
         if st["stage"] not in SOLVING:
             continue
-        answers = [extract_answer(o, "math") for o in st["outputs"]]
+        answers = [answer_of(o) for o in st["outputs"]]
         right = [is_correct(a, reference) for a in answers]
         vote = st.get("vote") or {}
         out.append({
@@ -42,7 +52,7 @@ def grade_stages(r, reference):
             "finish_reasons": st["finish_reasons"], "output_tokens": st["output_tokens"],
             "majority": vote.get("majority"), "share": vote.get("share"),
             "threshold": vote.get("threshold"), "accepted": vote.get("accepted"),
-            "majority_correct": (is_correct(extract_answer(st["outputs"][vote["answers"].index(vote["majority"])], "math"), reference)
+            "majority_correct": (is_correct(answer_of(st["outputs"][vote["answers"].index(vote["majority"])]), reference)
                                  if vote else None),
         })
     return out
@@ -52,7 +62,7 @@ def grade(path):
     rows = [json.loads(line) for line in Path(path).open() if line.strip()]
     graded = []
     for r in rows:
-        predicted = extract_answer(r["pred"], "math")
+        predicted = answer_of(r["pred"])
         reference = strip_string(r["answer"])
         graded.append({
             "unique_id": r.get("unique_id"), "level": r.get("level"),

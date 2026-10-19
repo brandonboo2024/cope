@@ -1,0 +1,38 @@
+{
+ "file": "outputs/cs470/gemma3-4b/mbpp_cope.jsonl",
+ "tasks": 50,
+ "excluded_task_ids": [],
+ "correct": 33,
+ "accuracy": 0.66,
+ "passes_public": 46,
+ "tokens_per_task": 4806.74,
+ "small_tokens_per_task": 4644.46,
+ "big_tokens_per_task": 162.28,
+ "usd_total": 0.0070125,
+ "rounds": {
+  "0": 0,
+  "1": 38,
+  "2": 6,
+  "3": 6
+ },
+ "stage_checks": {
+  "1b": {
+   "ran": 50,
+   "accepted": 38,
+   "accepted_wrong": 12,
+   "rejected_any_right": 0,
+   "pass_public_fail_hidden": 82,
+   "candidates": 400,
+   "capped_candidates": 0
+  },
+  "2b": {
+   "ran": 12,
+   "accepted": 6,
+   "accepted_wrong": 1,
+   "rejected_any_right": 0,
+   "pass_public_fail_hidden": 4,
+   "candidates": 96,
+   "capped_candidates": 0
+  }
+ }
+}

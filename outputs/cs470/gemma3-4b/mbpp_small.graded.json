@@ -1,0 +1,19 @@
+{
+ "file": "outputs/cs470/gemma3-4b/mbpp_small.jsonl",
+ "tasks": 50,
+ "excluded_task_ids": [],
+ "correct": 22,
+ "accuracy": 0.44,
+ "passes_public": 32,
+ "tokens_per_task": 308.26,
+ "small_tokens_per_task": 308.26,
+ "big_tokens_per_task": 0.0,
+ "usd_total": 0.0,
+ "rounds": {
+  "0": 50,
+  "1": 0,
+  "2": 0,
+  "3": 0
+ },
+ "stage_checks": {}
+}
