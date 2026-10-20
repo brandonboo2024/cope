@@ -1,0 +1,3990 @@
+{
+ "file": "outputs/cs470/qwen3-4b-2507/math500_cope.jsonl",
+ "tasks": 50,
+ "correct": 46,
+ "accuracy": 0.92,
+ "tokens_per_task": 12427.4,
+ "small_tokens_per_task": 12181.98,
+ "big_tokens_per_task": 245.42,
+ "usd_total": 0.0115131,
+ "rounds": {
+  "0": 0,
+  "1": 39,
+  "2": 4,
+  "3": 7
+ },
+ "stage_checks": {
+  "1b": {
+   "ran": 50,
+   "accepted": 39,
+   "accepted_wrong": 2,
+   "rejected_right_majority": 6,
+   "rejected_any_right": 7,
+   "capped_attempts": 55
+  },
+  "2b": {
+   "ran": 11,
+   "accepted": 4,
+   "accepted_wrong": 0,
+   "rejected_right_majority": 2,
+   "rejected_any_right": 4,
+   "capped_attempts": 50
+  }
+ },
+ "tasks_detail": [
+  {
+   "unique_id": "test/precalculus/807.json",
+   "level": 2,
+   "reference": "(3,\\frac{\\pi}{2})",
+   "predicted": "(3,\\frac{\\pi}{2})",
+   "correct": true,
+   "round": 1,
+   "small_in": 2762,
+   "small_out": 2235,
+   "big_in": 0,
+   "big_out": 0,
+   "usd": 0.0,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 8,
+     "answers": [
+      "(3,\\frac{\\pi}{2})",
+      "(3,\\frac{\\pi}{2})",
+      "(3,\\frac{\\pi}{2})",
+      "(3,\\frac{\\pi}{2})",
+      "(3,\\frac{\\pi}{2})",
+      "(3,\\frac{\\pi}{2})",
+      "(3,\\frac{\\pi}{2})",
+      "(3,\\frac{\\pi}{2})"
+     ],
+     "correct": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "finish_reasons": [
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop"
+     ],
+     "output_tokens": [
+      190,
+      208,
+      225,
+      187,
+      195,
+      213,
+      210,
+      189
+     ],
+     "majority": "(3,\\frac{\\pi}{2})",
+     "share": 1.0,
+     "threshold": 0.75,
+     "accepted": true,
+     "majority_correct": true
+    }
+   ]
+  },
+  {
+   "unique_id": "test/intermediate_algebra/1994.json",
+   "level": 5,
+   "reference": "p-q",
+   "predicted": "p-q",
+   "correct": true,
+   "round": 1,
+   "small_in": 3693,
+   "small_out": 6825,
+   "big_in": 0,
+   "big_out": 0,
+   "usd": 0.0,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 8,
+     "answers": [
+      "p-q",
+      "p-q",
+      "p-q",
+      "p-q",
+      "p-q",
+      "p-q",
+      "p-q",
+      "p-q"
+     ],
+     "correct": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "finish_reasons": [
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop"
+     ],
+     "output_tokens": [
+      790,
+      776,
+      764,
+      757,
+      759,
+      789,
+      851,
+      798
+     ],
+     "majority": "p - q",
+     "share": 1.0,
+     "threshold": 0.75,
+     "accepted": true,
+     "majority_correct": true
+    }
+   ]
+  },
+  {
+   "unique_id": "test/algebra/2584.json",
+   "level": 3,
+   "reference": "\\frac{14}{3}",
+   "predicted": "\\frac{14}{3}",
+   "correct": true,
+   "round": 1,
+   "small_in": 2615,
+   "small_out": 3012,
+   "big_in": 0,
+   "big_out": 0,
+   "usd": 0.0,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 8,
+     "answers": [
+      "\\frac{14}{3}",
+      "\\frac{14}{3}",
+      "\\frac{14}{3}",
+      "\\frac{14}{3}",
+      "\\frac{14}{3}",
+      "\\frac{14}{3}",
+      "\\frac{14}{3}",
+      "\\frac{14}{3}"
+     ],
+     "correct": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "finish_reasons": [
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop"
+     ],
+     "output_tokens": [
+      307,
+      322,
+      307,
+      322,
+      327,
+      327,
+      333,
+      288
+     ],
+     "majority": "\\frac{14}{3}",
+     "share": 1.0,
+     "threshold": 0.75,
+     "accepted": true,
+     "majority_correct": true
+    }
+   ]
+  },
+  {
+   "unique_id": "test/number_theory/572.json",
+   "level": 3,
+   "reference": "9",
+   "predicted": "9",
+   "correct": true,
+   "round": 1,
+   "small_in": 1783,
+   "small_out": 1567,
+   "big_in": 0,
+   "big_out": 0,
+   "usd": 0.0,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 8,
+     "answers": [
+      "9",
+      "9",
+      "9",
+      "9",
+      "9",
+      "9",
+      "9",
+      "9"
+     ],
+     "correct": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "finish_reasons": [
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop"
+     ],
+     "output_tokens": [
+      167,
+      167,
+      217,
+      169,
+      167,
+      169,
+      167,
+      169
+     ],
+     "majority": "9",
+     "share": 1.0,
+     "threshold": 0.75,
+     "accepted": true,
+     "majority_correct": true
+    }
+   ]
+  },
+  {
+   "unique_id": "test/algebra/1349.json",
+   "level": 2,
+   "reference": "Evelyn",
+   "predicted": "Evelyn",
+   "correct": true,
+   "round": 2,
+   "small_in": 11454,
+   "small_out": 6548,
+   "big_in": 382,
+   "big_out": 72,
+   "usd": 0.000201,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 6,
+     "answers": [
+      "Evelyn",
+      "Evelyn",
+      "Carla",
+      "Evelyn",
+      "Evelyn",
+      "Carla",
+      "Evelyn",
+      "Evelyn"
+     ],
+     "correct": [
+      true,
+      true,
+      false,
+      true,
+      true,
+      false,
+      true,
+      true
+     ],
+     "finish_reasons": [
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop"
+     ],
+     "output_tokens": [
+      339,
+      344,
+      659,
+      448,
+      342,
+      577,
+      463,
+      412
+     ],
+     "majority": "Evelyn",
+     "share": 0.75,
+     "threshold": 0.75,
+     "accepted": false,
+     "majority_correct": true
+    },
+    {
+     "stage": "2b",
+     "attempts": 8,
+     "right": 8,
+     "answers": [
+      "Evelyn",
+      "Evelyn",
+      "Evelyn",
+      "Evelyn",
+      "Evelyn",
+      "Evelyn",
+      "Evelyn",
+      "Evelyn"
+     ],
+     "correct": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "finish_reasons": [
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop"
+     ],
+     "output_tokens": [
+      370,
+      375,
+      339,
+      337,
+      328,
+      338,
+      331,
+      340
+     ],
+     "majority": "Evelyn",
+     "share": 1.0,
+     "threshold": 0.5,
+     "accepted": true,
+     "majority_correct": true
+    }
+   ]
+  },
+  {
+   "unique_id": "test/prealgebra/1622.json",
+   "level": 2,
+   "reference": "42",
+   "predicted": "42",
+   "correct": true,
+   "round": 1,
+   "small_in": 2327,
+   "small_out": 1905,
+   "big_in": 0,
+   "big_out": 0,
+   "usd": 0.0,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 8,
+     "answers": [
+      "42",
+      "42",
+      "42",
+      "42",
+      "42",
+      "42",
+      "42",
+      "42"
+     ],
+     "correct": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "finish_reasons": [
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop"
+     ],
+     "output_tokens": [
+      220,
+      192,
+      223,
+      206,
+      179,
+      201,
+      186,
+      211
+     ],
+     "majority": "42",
+     "share": 1.0,
+     "threshold": 0.75,
+     "accepted": true,
+     "majority_correct": true
+    }
+   ]
+  },
+  {
+   "unique_id": "test/number_theory/515.json",
+   "level": 3,
+   "reference": "27",
+   "predicted": "27",
+   "correct": true,
+   "round": 1,
+   "small_in": 1881,
+   "small_out": 3271,
+   "big_in": 0,
+   "big_out": 0,
+   "usd": 0.0,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 8,
+     "answers": [
+      "27",
+      "27",
+      "27",
+      "27",
+      "27",
+      "27",
+      "27",
+      "27"
+     ],
+     "correct": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "finish_reasons": [
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop"
+     ],
+     "output_tokens": [
+      367,
+      400,
+      419,
+      354,
+      376,
+      412,
+      359,
+      391
+     ],
+     "majority": "27",
+     "share": 1.0,
+     "threshold": 0.75,
+     "accepted": true,
+     "majority_correct": true
+    }
+   ]
+  },
+  {
+   "unique_id": "test/precalculus/927.json",
+   "level": 4,
+   "reference": "90",
+   "predicted": "90",
+   "correct": true,
+   "round": 2,
+   "small_in": 5182,
+   "small_out": 11236,
+   "big_in": 108,
+   "big_out": 69,
+   "usd": 0.0001152,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 6,
+     "answers": [
+      "4",
+      "90",
+      "66",
+      "90",
+      "90",
+      "90",
+      "90",
+      "90"
+     ],
+     "correct": [
+      false,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "finish_reasons": [
+      "length",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop"
+     ],
+     "output_tokens": [
+      2048,
+      509,
+      813,
+      629,
+      583,
+      636,
+      532,
+      514
+     ],
+     "majority": "90",
+     "share": 0.75,
+     "threshold": 0.75,
+     "accepted": false,
+     "majority_correct": true
+    },
+    {
+     "stage": "2b",
+     "attempts": 8,
+     "right": 6,
+     "answers": [
+      "90",
+      "90",
+      "90",
+      "90",
+      "65.7",
+      "90",
+      "66",
+      "90"
+     ],
+     "correct": [
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      false,
+      true
+     ],
+     "finish_reasons": [
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop"
+     ],
+     "output_tokens": [
+      517,
+      558,
+      516,
+      541,
+      662,
+      529,
+      700,
+      535
+     ],
+     "majority": "90",
+     "share": 0.75,
+     "threshold": 0.5,
+     "accepted": true,
+     "majority_correct": true
+    }
+   ]
+  },
+  {
+   "unique_id": "test/algebra/2036.json",
+   "level": 3,
+   "reference": "3\\sqrt{13}",
+   "predicted": "3\\sqrt{13}",
+   "correct": true,
+   "round": 1,
+   "small_in": 2248,
+   "small_out": 2931,
+   "big_in": 0,
+   "big_out": 0,
+   "usd": 0.0,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 8,
+     "answers": [
+      "3\\sqrt{13}",
+      "3\\sqrt{13}",
+      "3\\sqrt{13}",
+      "3\\sqrt{13}",
+      "3\\sqrt{13}",
+      "3\\sqrt{13}",
+      "3\\sqrt{13}",
+      "3\\sqrt{13}"
+     ],
+     "correct": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "finish_reasons": [
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop"
+     ],
+     "output_tokens": [
+      330,
+      328,
+      316,
+      331,
+      316,
+      331,
+      332,
+      327
+     ],
+     "majority": "3 \\sqrt{13}",
+     "share": 1.0,
+     "threshold": 0.75,
+     "accepted": true,
+     "majority_correct": true
+    }
+   ]
+  },
+  {
+   "unique_id": "test/prealgebra/1139.json",
+   "level": 5,
+   "reference": "4",
+   "predicted": "4",
+   "correct": true,
+   "round": 3,
+   "small_in": 7105,
+   "small_out": 33233,
+   "big_in": 507,
+   "big_out": 2114,
+   "usd": 0.0026888999999999997,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 0,
+     "answers": [
+      "14",
+      "3",
+      "2345",
+      "144",
+      "5",
+      "14",
+      "72",
+      "1"
+     ],
+     "correct": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+     ],
+     "finish_reasons": [
+      "length",
+      "length",
+      "length",
+      "length",
+      "length",
+      "length",
+      "length",
+      "length"
+     ],
+     "output_tokens": [
+      2048,
+      2048,
+      2048,
+      2048,
+      2048,
+      2048,
+      2048,
+      2048
+     ],
+     "majority": "14",
+     "share": 0.25,
+     "threshold": 0.75,
+     "accepted": false,
+     "majority_correct": false
+    },
+    {
+     "stage": "2b",
+     "attempts": 8,
+     "right": 2,
+     "answers": [
+      "1",
+      "3",
+      "144",
+      "1",
+      "4",
+      "144",
+      "4",
+      "1"
+     ],
+     "correct": [
+      false,
+      false,
+      false,
+      false,
+      true,
+      false,
+      true,
+      false
+     ],
+     "finish_reasons": [
+      "length",
+      "length",
+      "length",
+      "length",
+      "length",
+      "length",
+      "length",
+      "length"
+     ],
+     "output_tokens": [
+      2048,
+      2048,
+      2048,
+      2048,
+      2048,
+      2048,
+      2048,
+      2048
+     ],
+     "majority": "1",
+     "share": 0.375,
+     "threshold": 0.5,
+     "accepted": false,
+     "majority_correct": false
+    },
+    {
+     "stage": "3",
+     "attempts": 1,
+     "right": 1,
+     "answers": [
+      "4"
+     ],
+     "correct": [
+      true
+     ],
+     "finish_reasons": [
+      "length"
+     ],
+     "output_tokens": [
+      2048
+     ],
+     "majority": null,
+     "share": null,
+     "threshold": null,
+     "accepted": null,
+     "majority_correct": null
+    }
+   ]
+  },
+  {
+   "unique_id": "test/number_theory/1032.json",
+   "level": 3,
+   "reference": "2220",
+   "predicted": "2220",
+   "correct": true,
+   "round": 1,
+   "small_in": 2025,
+   "small_out": 11901,
+   "big_in": 0,
+   "big_out": 0,
+   "usd": 0.0,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 7,
+     "answers": [
+      "2220",
+      "2220",
+      "200",
+      "2220",
+      "2220",
+      "2220",
+      "2220",
+      "2220"
+     ],
+     "correct": [
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "finish_reasons": [
+      "stop",
+      "stop",
+      "length",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop"
+     ],
+     "output_tokens": [
+      777,
+      1522,
+      2048,
+      1068,
+      1826,
+      1379,
+      1108,
+      1932
+     ],
+     "majority": "2220",
+     "share": 0.875,
+     "threshold": 0.75,
+     "accepted": true,
+     "majority_correct": true
+    }
+   ]
+  },
+  {
+   "unique_id": "test/intermediate_algebra/1197.json",
+   "level": 5,
+   "reference": "\\frac{3}{56}",
+   "predicted": "\\frac{3}{56}",
+   "correct": true,
+   "round": 3,
+   "small_in": 5230,
+   "small_out": 33288,
+   "big_in": 378,
+   "big_out": 1553,
+   "usd": 0.001977,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 0,
+     "answers": [
+      "1",
+      "\\frac{721}{9}",
+      "1",
+      "2",
+      "7",
+      "40320",
+      "8",
+      "2"
+     ],
+     "correct": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+     ],
+     "finish_reasons": [
+      "length",
+      "stop",
+      "length",
+      "length",
+      "length",
+      "length",
+      "length",
+      "length"
+     ],
+     "output_tokens": [
+      2048,
+      2018,
+      2048,
+      2048,
+      2048,
+      2048,
+      2048,
+      2048
+     ],
+     "majority": "1",
+     "share": 0.25,
+     "threshold": 0.75,
+     "accepted": false,
+     "majority_correct": false
+    },
+    {
+     "stage": "2b",
+     "attempts": 8,
+     "right": 0,
+     "answers": [
+      "1",
+      "2",
+      "234567",
+      "23456",
+      "2345",
+      "6",
+      "29",
+      "-1"
+     ],
+     "correct": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+     ],
+     "finish_reasons": [
+      "length",
+      "length",
+      "length",
+      "length",
+      "length",
+      "length",
+      "length",
+      "length"
+     ],
+     "output_tokens": [
+      2048,
+      2048,
+      2048,
+      2048,
+      2048,
+      2048,
+      2048,
+      2048
+     ],
+     "majority": "1",
+     "share": 0.125,
+     "threshold": 0.5,
+     "accepted": false,
+     "majority_correct": false
+    },
+    {
+     "stage": "3",
+     "attempts": 1,
+     "right": 1,
+     "answers": [
+      "\\frac{3}{56}"
+     ],
+     "correct": [
+      true
+     ],
+     "finish_reasons": [
+      "stop"
+     ],
+     "output_tokens": [
+      1464
+     ],
+     "majority": null,
+     "share": null,
+     "threshold": null,
+     "accepted": null,
+     "majority_correct": null
+    }
+   ]
+  },
+  {
+   "unique_id": "test/number_theory/737.json",
+   "level": 5,
+   "reference": "284",
+   "predicted": "284",
+   "correct": true,
+   "round": 1,
+   "small_in": 2889,
+   "small_out": 6418,
+   "big_in": 0,
+   "big_out": 0,
+   "usd": 0.0,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 8,
+     "answers": [
+      "284",
+      "284",
+      "284",
+      "284",
+      "284",
+      "284",
+      "284",
+      "284"
+     ],
+     "correct": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "finish_reasons": [
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop"
+     ],
+     "output_tokens": [
+      659,
+      581,
+      874,
+      822,
+      730,
+      788,
+      957,
+      638
+     ],
+     "majority": "284",
+     "share": 1.0,
+     "threshold": 0.75,
+     "accepted": true,
+     "majority_correct": true
+    }
+   ]
+  },
+  {
+   "unique_id": "test/geometry/248.json",
+   "level": 2,
+   "reference": "5",
+   "predicted": "5",
+   "correct": true,
+   "round": 1,
+   "small_in": 4494,
+   "small_out": 1938,
+   "big_in": 0,
+   "big_out": 0,
+   "usd": 0.0,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 8,
+     "answers": [
+      "5",
+      "5",
+      "5",
+      "5",
+      "5",
+      "5",
+      "5",
+      "5"
+     ],
+     "correct": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "finish_reasons": [
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop"
+     ],
+     "output_tokens": [
+      207,
+      192,
+      207,
+      207,
+      207,
+      207,
+      194,
+      207
+     ],
+     "majority": "5",
+     "share": 1.0,
+     "threshold": 0.75,
+     "accepted": true,
+     "majority_correct": true
+    }
+   ]
+  },
+  {
+   "unique_id": "test/precalculus/1303.json",
+   "level": 1,
+   "reference": "\\sqrt{51}",
+   "predicted": "\\sqrt{51}",
+   "correct": true,
+   "round": 1,
+   "small_in": 3544,
+   "small_out": 3523,
+   "big_in": 0,
+   "big_out": 0,
+   "usd": 0.0,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 8,
+     "answers": [
+      "\\sqrt{51}",
+      "\\sqrt{51}",
+      "\\sqrt{51}",
+      "\\sqrt{51}",
+      "\\sqrt{51}",
+      "\\sqrt{51}",
+      "\\sqrt{51}",
+      "\\sqrt{51}"
+     ],
+     "correct": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "finish_reasons": [
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop"
+     ],
+     "output_tokens": [
+      369,
+      393,
+      415,
+      380,
+      378,
+      445,
+      385,
+      406
+     ],
+     "majority": "\\sqrt{51}",
+     "share": 1.0,
+     "threshold": 0.75,
+     "accepted": true,
+     "majority_correct": true
+    }
+   ]
+  },
+  {
+   "unique_id": "test/precalculus/990.json",
+   "level": 5,
+   "reference": "6-5i",
+   "predicted": "6-5i",
+   "correct": true,
+   "round": 1,
+   "small_in": 4839,
+   "small_out": 6092,
+   "big_in": 0,
+   "big_out": 0,
+   "usd": 0.0,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 8,
+     "answers": [
+      "6-5i",
+      "6-5i",
+      "6-5i",
+      "6-5i",
+      "6-5i",
+      "6-5i",
+      "6-5i",
+      "6-5i"
+     ],
+     "correct": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "finish_reasons": [
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop"
+     ],
+     "output_tokens": [
+      681,
+      671,
+      675,
+      662,
+      656,
+      653,
+      709,
+      786
+     ],
+     "majority": "6 - 5 i",
+     "share": 1.0,
+     "threshold": 0.75,
+     "accepted": true,
+     "majority_correct": true
+    }
+   ]
+  },
+  {
+   "unique_id": "test/intermediate_algebra/134.json",
+   "level": 1,
+   "reference": "-50",
+   "predicted": "-50",
+   "correct": true,
+   "round": 1,
+   "small_in": 2138,
+   "small_out": 1979,
+   "big_in": 0,
+   "big_out": 0,
+   "usd": 0.0,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 8,
+     "answers": [
+      "-50",
+      "-50",
+      "-50",
+      "-50",
+      "-50",
+      "-50",
+      "-50",
+      "-50"
+     ],
+     "correct": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "finish_reasons": [
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop"
+     ],
+     "output_tokens": [
+      235,
+      196,
+      190,
+      191,
+      223,
+      166,
+      182,
+      218
+     ],
+     "majority": "-50",
+     "share": 1.0,
+     "threshold": 0.75,
+     "accepted": true,
+     "majority_correct": true
+    }
+   ]
+  },
+  {
+   "unique_id": "test/precalculus/1199.json",
+   "level": 4,
+   "reference": "\\pi",
+   "predicted": "\\pi",
+   "correct": true,
+   "round": 2,
+   "small_in": 8723,
+   "small_out": 25239,
+   "big_in": 266,
+   "big_out": 88,
+   "usd": 0.00018539999999999998,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 1,
+     "answers": [
+      "3",
+      "3",
+      "-\\pi",
+      "3",
+      "0",
+      "-\\pi",
+      "2",
+      "\\pi"
+     ],
+     "correct": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      true
+     ],
+     "finish_reasons": [
+      "length",
+      "length",
+      "length",
+      "length",
+      "length",
+      "stop",
+      "length",
+      "stop"
+     ],
+     "output_tokens": [
+      2048,
+      2048,
+      2048,
+      2048,
+      2048,
+      2040,
+      2048,
+      1958
+     ],
+     "majority": "3",
+     "share": 0.375,
+     "threshold": 0.75,
+     "accepted": false,
+     "majority_correct": false
+    },
+    {
+     "stage": "2b",
+     "attempts": 8,
+     "right": 8,
+     "answers": [
+      "\\pi",
+      "\\pi",
+      "\\pi",
+      "\\pi",
+      "\\pi",
+      "\\pi",
+      "\\pi",
+      "\\pi"
+     ],
+     "correct": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "finish_reasons": [
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop"
+     ],
+     "output_tokens": [
+      1106,
+      871,
+      598,
+      1038,
+      1157,
+      716,
+      1539,
+      1573
+     ],
+     "majority": "\\pi",
+     "share": 1.0,
+     "threshold": 0.5,
+     "accepted": true,
+     "majority_correct": true
+    }
+   ]
+  },
+  {
+   "unique_id": "test/geometry/434.json",
+   "level": 1,
+   "reference": "28",
+   "predicted": "56",
+   "correct": false,
+   "round": 3,
+   "small_in": 7149,
+   "small_out": 31952,
+   "big_in": 530,
+   "big_out": 571,
+   "usd": 0.0008441999999999999,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 0,
+     "answers": [
+      "124",
+      "-1",
+      "124",
+      "56",
+      "180",
+      "68",
+      "56",
+      "124"
+     ],
+     "correct": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+     ],
+     "finish_reasons": [
+      "length",
+      "length",
+      "length",
+      "length",
+      "length",
+      "stop",
+      "length",
+      "length"
+     ],
+     "output_tokens": [
+      2048,
+      2048,
+      2048,
+      2048,
+      2048,
+      1148,
+      2048,
+      2048
+     ],
+     "majority": "124",
+     "share": 0.375,
+     "threshold": 0.75,
+     "accepted": false,
+     "majority_correct": false
+    },
+    {
+     "stage": "2b",
+     "attempts": 8,
+     "right": 0,
+     "answers": [
+      "124",
+      "62",
+      "124",
+      "1",
+      "124",
+      "2",
+      "18",
+      "68"
+     ],
+     "correct": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+     ],
+     "finish_reasons": [
+      "length",
+      "length",
+      "length",
+      "length",
+      "length",
+      "length",
+      "length",
+      "stop"
+     ],
+     "output_tokens": [
+      2048,
+      2048,
+      2048,
+      2048,
+      2048,
+      2048,
+      2048,
+      1543
+     ],
+     "majority": "124",
+     "share": 0.375,
+     "threshold": 0.5,
+     "accepted": false,
+     "majority_correct": false
+    },
+    {
+     "stage": "3",
+     "attempts": 1,
+     "right": 0,
+     "answers": [
+      "56"
+     ],
+     "correct": [
+      false
+     ],
+     "finish_reasons": [
+      "stop"
+     ],
+     "output_tokens": [
+      520
+     ],
+     "majority": null,
+     "share": null,
+     "threshold": null,
+     "accepted": null,
+     "majority_correct": null
+    }
+   ]
+  },
+  {
+   "unique_id": "test/intermediate_algebra/1000.json",
+   "level": 3,
+   "reference": "3",
+   "predicted": "3",
+   "correct": true,
+   "round": 3,
+   "small_in": 4563,
+   "small_out": 29735,
+   "big_in": 326,
+   "big_out": 910,
+   "usd": 0.0011898,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 6,
+     "answers": [
+      "1",
+      "3",
+      "3",
+      "3",
+      "3",
+      "3",
+      "3",
+      "1"
+     ],
+     "correct": [
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false
+     ],
+     "finish_reasons": [
+      "length",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "length"
+     ],
+     "output_tokens": [
+      2048,
+      1725,
+      1263,
+      2007,
+      1559,
+      1470,
+      1888,
+      2048
+     ],
+     "majority": "3",
+     "share": 0.75,
+     "threshold": 0.75,
+     "accepted": false,
+     "majority_correct": true
+    },
+    {
+     "stage": "2b",
+     "attempts": 8,
+     "right": 3,
+     "answers": [
+      "2",
+      "3",
+      "2",
+      "2",
+      "3",
+      "3",
+      "-1",
+      "-0.1"
+     ],
+     "correct": [
+      false,
+      true,
+      false,
+      false,
+      true,
+      true,
+      false,
+      false
+     ],
+     "finish_reasons": [
+      "length",
+      "length",
+      "length",
+      "length",
+      "stop",
+      "stop",
+      "length",
+      "length"
+     ],
+     "output_tokens": [
+      2048,
+      2048,
+      2048,
+      2048,
+      1725,
+      1335,
+      2048,
+      2048
+     ],
+     "majority": "2",
+     "share": 0.375,
+     "threshold": 0.5,
+     "accepted": false,
+     "majority_correct": false
+    },
+    {
+     "stage": "3",
+     "attempts": 1,
+     "right": 1,
+     "answers": [
+      "3"
+     ],
+     "correct": [
+      true
+     ],
+     "finish_reasons": [
+      "stop"
+     ],
+     "output_tokens": [
+      850
+     ],
+     "majority": null,
+     "share": null,
+     "threshold": null,
+     "accepted": null,
+     "majority_correct": null
+    }
+   ]
+  },
+  {
+   "unique_id": "test/algebra/1098.json",
+   "level": 3,
+   "reference": "6+9i",
+   "predicted": "6+9i",
+   "correct": true,
+   "round": 1,
+   "small_in": 1808,
+   "small_out": 1258,
+   "big_in": 0,
+   "big_out": 0,
+   "usd": 0.0,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 8,
+     "answers": [
+      "6+9i",
+      "6+9i",
+      "6+9i",
+      "6+9i",
+      "6+9i",
+      "6+9i",
+      "6+9i",
+      "6+9i"
+     ],
+     "correct": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "finish_reasons": [
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop"
+     ],
+     "output_tokens": [
+      134,
+      130,
+      127,
+      134,
+      123,
+      134,
+      123,
+      129
+     ],
+     "majority": "9 i + 6",
+     "share": 1.0,
+     "threshold": 0.75,
+     "accepted": true,
+     "majority_correct": true
+    }
+   ]
+  },
+  {
+   "unique_id": "test/intermediate_algebra/607.json",
+   "level": 3,
+   "reference": "13535",
+   "predicted": "13535",
+   "correct": true,
+   "round": 3,
+   "small_in": 3893,
+   "small_out": 26398,
+   "big_in": 283,
+   "big_out": 587,
+   "usd": 0.0007892999999999999,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 3,
+     "answers": [
+      "1",
+      "13535",
+      "13535",
+      "2",
+      "13535",
+      "13751",
+      "6",
+      "7"
+     ],
+     "correct": [
+      false,
+      true,
+      true,
+      false,
+      true,
+      false,
+      false,
+      false
+     ],
+     "finish_reasons": [
+      "length",
+      "stop",
+      "stop",
+      "length",
+      "stop",
+      "stop",
+      "length",
+      "length"
+     ],
+     "output_tokens": [
+      2048,
+      1839,
+      1160,
+      2048,
+      1896,
+      1971,
+      2048,
+      2048
+     ],
+     "majority": "13535",
+     "share": 0.375,
+     "threshold": 0.75,
+     "accepted": false,
+     "majority_correct": true
+    },
+    {
+     "stage": "2b",
+     "attempts": 8,
+     "right": 3,
+     "answers": [
+      "13535",
+      "13535",
+      "49",
+      "15823",
+      "6767",
+      "13535",
+      "5",
+      "6767"
+     ],
+     "correct": [
+      true,
+      true,
+      false,
+      false,
+      false,
+      true,
+      false,
+      false
+     ],
+     "finish_reasons": [
+      "stop",
+      "stop",
+      "length",
+      "stop",
+      "stop",
+      "stop",
+      "length",
+      "stop"
+     ],
+     "output_tokens": [
+      1221,
+      1106,
+      2048,
+      1299,
+      961,
+      1363,
+      2048,
+      1097
+     ],
+     "majority": "13535",
+     "share": 0.375,
+     "threshold": 0.5,
+     "accepted": false,
+     "majority_correct": true
+    },
+    {
+     "stage": "3",
+     "attempts": 1,
+     "right": 1,
+     "answers": [
+      "13535"
+     ],
+     "correct": [
+      true
+     ],
+     "finish_reasons": [
+      "stop"
+     ],
+     "output_tokens": [
+      535
+     ],
+     "majority": null,
+     "share": null,
+     "threshold": null,
+     "accepted": null,
+     "majority_correct": null
+    }
+   ]
+  },
+  {
+   "unique_id": "test/algebra/1837.json",
+   "level": 5,
+   "reference": "5",
+   "predicted": "5",
+   "correct": true,
+   "round": 1,
+   "small_in": 4240,
+   "small_out": 5691,
+   "big_in": 0,
+   "big_out": 0,
+   "usd": 0.0,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 8,
+     "answers": [
+      "5",
+      "5",
+      "5",
+      "5",
+      "5",
+      "5",
+      "5",
+      "5"
+     ],
+     "correct": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "finish_reasons": [
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop"
+     ],
+     "output_tokens": [
+      606,
+      666,
+      582,
+      633,
+      630,
+      560,
+      576,
+      622
+     ],
+     "majority": "5",
+     "share": 1.0,
+     "threshold": 0.75,
+     "accepted": true,
+     "majority_correct": true
+    }
+   ]
+  },
+  {
+   "unique_id": "test/algebra/2193.json",
+   "level": 5,
+   "reference": "5",
+   "predicted": "5",
+   "correct": true,
+   "round": 1,
+   "small_in": 2096,
+   "small_out": 3885,
+   "big_in": 0,
+   "big_out": 0,
+   "usd": 0.0,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 8,
+     "answers": [
+      "5",
+      "5",
+      "5",
+      "5",
+      "5",
+      "5",
+      "5",
+      "5"
+     ],
+     "correct": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "finish_reasons": [
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop"
+     ],
+     "output_tokens": [
+      459,
+      466,
+      454,
+      433,
+      473,
+      439,
+      460,
+      445
+     ],
+     "majority": "5",
+     "share": 1.0,
+     "threshold": 0.75,
+     "accepted": true,
+     "majority_correct": true
+    }
+   ]
+  },
+  {
+   "unique_id": "test/algebra/2427.json",
+   "level": 5,
+   "reference": "10",
+   "predicted": "10",
+   "correct": true,
+   "round": 1,
+   "small_in": 3427,
+   "small_out": 7668,
+   "big_in": 0,
+   "big_out": 0,
+   "usd": 0.0,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 8,
+     "answers": [
+      "10",
+      "10",
+      "10",
+      "10",
+      "10",
+      "10",
+      "10",
+      "10"
+     ],
+     "correct": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "finish_reasons": [
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop"
+     ],
+     "output_tokens": [
+      925,
+      929,
+      981,
+      948,
+      1096,
+      935,
+      926,
+      533
+     ],
+     "majority": "10",
+     "share": 1.0,
+     "threshold": 0.75,
+     "accepted": true,
+     "majority_correct": true
+    }
+   ]
+  },
+  {
+   "unique_id": "test/intermediate_algebra/1388.json",
+   "level": 5,
+   "reference": "1,-2",
+   "predicted": "-2,1",
+   "correct": false,
+   "round": 1,
+   "small_in": 2988,
+   "small_out": 9681,
+   "big_in": 0,
+   "big_out": 0,
+   "usd": 0.0,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 0,
+     "answers": [
+      "-2,1",
+      "-2,1",
+      "-2,1",
+      "-2,1",
+      "-2,1",
+      "-2,1",
+      "-2,1",
+      "-2,1"
+     ],
+     "correct": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+     ],
+     "finish_reasons": [
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop"
+     ],
+     "output_tokens": [
+      1137,
+      1270,
+      1372,
+      1038,
+      1128,
+      1084,
+      1055,
+      1257
+     ],
+     "majority": "-2,1",
+     "share": 1.0,
+     "threshold": 0.75,
+     "accepted": true,
+     "majority_correct": false
+    }
+   ]
+  },
+  {
+   "unique_id": "test/counting_and_probability/525.json",
+   "level": 5,
+   "reference": "144",
+   "predicted": "144",
+   "correct": true,
+   "round": 3,
+   "small_in": 4488,
+   "small_out": 31659,
+   "big_in": 326,
+   "big_out": 543,
+   "usd": 0.0007494,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 3,
+     "answers": [
+      "144",
+      "144",
+      "35",
+      "120",
+      "144",
+      "14",
+      "72",
+      "7"
+     ],
+     "correct": [
+      true,
+      true,
+      false,
+      false,
+      true,
+      false,
+      false,
+      false
+     ],
+     "finish_reasons": [
+      "length",
+      "length",
+      "length",
+      "length",
+      "stop",
+      "length",
+      "length",
+      "length"
+     ],
+     "output_tokens": [
+      2048,
+      2048,
+      2048,
+      2048,
+      1053,
+      2048,
+      2048,
+      2048
+     ],
+     "majority": "144",
+     "share": 0.375,
+     "threshold": 0.75,
+     "accepted": false,
+     "majority_correct": true
+    },
+    {
+     "stage": "2b",
+     "attempts": 8,
+     "right": 3,
+     "answers": [
+      "367",
+      "144",
+      "6",
+      "144",
+      "6",
+      "144",
+      "4",
+      "12"
+     ],
+     "correct": [
+      false,
+      true,
+      false,
+      true,
+      false,
+      true,
+      false,
+      false
+     ],
+     "finish_reasons": [
+      "length",
+      "length",
+      "length",
+      "length",
+      "length",
+      "stop",
+      "length",
+      "length"
+     ],
+     "output_tokens": [
+      2048,
+      2048,
+      2048,
+      2048,
+      2048,
+      1622,
+      2048,
+      2048
+     ],
+     "majority": "144",
+     "share": 0.375,
+     "threshold": 0.5,
+     "accepted": false,
+     "majority_correct": true
+    },
+    {
+     "stage": "3",
+     "attempts": 1,
+     "right": 1,
+     "answers": [
+      "144"
+     ],
+     "correct": [
+      true
+     ],
+     "finish_reasons": [
+      "stop"
+     ],
+     "output_tokens": [
+      494
+     ],
+     "majority": null,
+     "share": null,
+     "threshold": null,
+     "accepted": null,
+     "majority_correct": null
+    }
+   ]
+  },
+  {
+   "unique_id": "test/prealgebra/1840.json",
+   "level": 2,
+   "reference": "78",
+   "predicted": "78",
+   "correct": true,
+   "round": 1,
+   "small_in": 2980,
+   "small_out": 2194,
+   "big_in": 0,
+   "big_out": 0,
+   "usd": 0.0,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 8,
+     "answers": [
+      "78",
+      "78",
+      "78",
+      "78",
+      "78",
+      "78",
+      "78",
+      "78"
+     ],
+     "correct": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "finish_reasons": [
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop"
+     ],
+     "output_tokens": [
+      233,
+      239,
+      233,
+      237,
+      238,
+      239,
+      240,
+      235
+     ],
+     "majority": "78",
+     "share": 1.0,
+     "threshold": 0.75,
+     "accepted": true,
+     "majority_correct": true
+    }
+   ]
+  },
+  {
+   "unique_id": "test/precalculus/779.json",
+   "level": 2,
+   "reference": "-2+7i",
+   "predicted": "-2+7i",
+   "correct": true,
+   "round": 1,
+   "small_in": 2241,
+   "small_out": 1492,
+   "big_in": 0,
+   "big_out": 0,
+   "usd": 0.0,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 8,
+     "answers": [
+      "-2+7i",
+      "-2+7i",
+      "-2+7i",
+      "-2+7i",
+      "-2+7i",
+      "-2+7i",
+      "-2+7i",
+      "-2+7i"
+     ],
+     "correct": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "finish_reasons": [
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop"
+     ],
+     "output_tokens": [
+      198,
+      138,
+      138,
+      138,
+      136,
+      136,
+      173,
+      138
+     ],
+     "majority": "7 i - 2",
+     "share": 1.0,
+     "threshold": 0.75,
+     "accepted": true,
+     "majority_correct": true
+    }
+   ]
+  },
+  {
+   "unique_id": "test/counting_and_probability/666.json",
+   "level": 2,
+   "reference": "225",
+   "predicted": "1",
+   "correct": false,
+   "round": 1,
+   "small_in": 2953,
+   "small_out": 3306,
+   "big_in": 0,
+   "big_out": 0,
+   "usd": 0.0,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 1,
+     "answers": [
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "225"
+     ],
+     "correct": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      true
+     ],
+     "finish_reasons": [
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop"
+     ],
+     "output_tokens": [
+      331,
+      235,
+      364,
+      233,
+      305,
+      426,
+      398,
+      693
+     ],
+     "majority": "1",
+     "share": 0.875,
+     "threshold": 0.75,
+     "accepted": true,
+     "majority_correct": false
+    }
+   ]
+  },
+  {
+   "unique_id": "test/number_theory/864.json",
+   "level": 3,
+   "reference": "52_8",
+   "predicted": "52_8",
+   "correct": true,
+   "round": 1,
+   "small_in": 2024,
+   "small_out": 1695,
+   "big_in": 0,
+   "big_out": 0,
+   "usd": 0.0,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 8,
+     "answers": [
+      "52_8",
+      "52_8",
+      "52_8",
+      "52_8",
+      "52_8",
+      "52_8",
+      "52_8",
+      "52_8"
+     ],
+     "correct": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "finish_reasons": [
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop"
+     ],
+     "output_tokens": [
+      158,
+      203,
+      188,
+      191,
+      155,
+      206,
+      176,
+      154
+     ],
+     "majority": "52",
+     "share": 1.0,
+     "threshold": 0.75,
+     "accepted": true,
+     "majority_correct": true
+    }
+   ]
+  },
+  {
+   "unique_id": "test/prealgebra/1302.json",
+   "level": 4,
+   "reference": "11\\sqrt{2}",
+   "predicted": "11\\sqrt{2}",
+   "correct": true,
+   "round": 1,
+   "small_in": 1875,
+   "small_out": 1704,
+   "big_in": 0,
+   "big_out": 0,
+   "usd": 0.0,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 8,
+     "answers": [
+      "11\\sqrt{2}",
+      "11\\sqrt{2}",
+      "11\\sqrt{2}",
+      "11\\sqrt{2}",
+      "11\\sqrt{2}",
+      "11\\sqrt{2}",
+      "11\\sqrt{2}",
+      "11\\sqrt{2}"
+     ],
+     "correct": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "finish_reasons": [
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop"
+     ],
+     "output_tokens": [
+      154,
+      198,
+      199,
+      157,
+      178,
+      157,
+      163,
+      167
+     ],
+     "majority": "11 \\sqrt{2}",
+     "share": 1.0,
+     "threshold": 0.75,
+     "accepted": true,
+     "majority_correct": true
+    }
+   ]
+  },
+  {
+   "unique_id": "test/counting_and_probability/134.json",
+   "level": 4,
+   "reference": "720",
+   "predicted": "720",
+   "correct": true,
+   "round": 1,
+   "small_in": 2570,
+   "small_out": 2592,
+   "big_in": 0,
+   "big_out": 0,
+   "usd": 0.0,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 8,
+     "answers": [
+      "720",
+      "720",
+      "720",
+      "720",
+      "720",
+      "720",
+      "720",
+      "720"
+     ],
+     "correct": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "finish_reasons": [
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop"
+     ],
+     "output_tokens": [
+      258,
+      268,
+      275,
+      276,
+      275,
+      304,
+      293,
+      273
+     ],
+     "majority": "720",
+     "share": 1.0,
+     "threshold": 0.75,
+     "accepted": true,
+     "majority_correct": true
+    }
+   ]
+  },
+  {
+   "unique_id": "test/algebra/1072.json",
+   "level": 4,
+   "reference": "\\frac{243}{625}",
+   "predicted": "\\frac{243}{625}",
+   "correct": true,
+   "round": 1,
+   "small_in": 2339,
+   "small_out": 5710,
+   "big_in": 0,
+   "big_out": 0,
+   "usd": 0.0,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 8,
+     "answers": [
+      "\\frac{243}{625}",
+      "\\frac{243}{625}",
+      "\\frac{243}{625}",
+      "\\frac{243}{625}",
+      "\\frac{243}{625}",
+      "\\frac{243}{625}",
+      "\\frac{243}{625}",
+      "\\frac{243}{625}"
+     ],
+     "correct": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "finish_reasons": [
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop"
+     ],
+     "output_tokens": [
+      707,
+      613,
+      694,
+      642,
+      755,
+      691,
+      634,
+      787
+     ],
+     "majority": "\\frac{243}{625}",
+     "share": 1.0,
+     "threshold": 0.75,
+     "accepted": true,
+     "majority_correct": true
+    }
+   ]
+  },
+  {
+   "unique_id": "test/counting_and_probability/119.json",
+   "level": 4,
+   "reference": "-125",
+   "predicted": "-125",
+   "correct": true,
+   "round": 1,
+   "small_in": 2292,
+   "small_out": 5818,
+   "big_in": 0,
+   "big_out": 0,
+   "usd": 0.0,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 8,
+     "answers": [
+      "-125",
+      "-125",
+      "-125",
+      "-125",
+      "-125",
+      "-125",
+      "-125",
+      "-125"
+     ],
+     "correct": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "finish_reasons": [
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop"
+     ],
+     "output_tokens": [
+      599,
+      650,
+      716,
+      650,
+      718,
+      696,
+      699,
+      718
+     ],
+     "majority": "-125",
+     "share": 1.0,
+     "threshold": 0.75,
+     "accepted": true,
+     "majority_correct": true
+    }
+   ]
+  },
+  {
+   "unique_id": "test/number_theory/627.json",
+   "level": 2,
+   "reference": "3",
+   "predicted": "3",
+   "correct": true,
+   "round": 1,
+   "small_in": 2429,
+   "small_out": 3217,
+   "big_in": 0,
+   "big_out": 0,
+   "usd": 0.0,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 8,
+     "answers": [
+      "3",
+      "3",
+      "3",
+      "3",
+      "3",
+      "3",
+      "3",
+      "3"
+     ],
+     "correct": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "finish_reasons": [
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop"
+     ],
+     "output_tokens": [
+      366,
+      391,
+      365,
+      341,
+      342,
+      340,
+      341,
+      342
+     ],
+     "majority": "3",
+     "share": 1.0,
+     "threshold": 0.75,
+     "accepted": true,
+     "majority_correct": true
+    }
+   ]
+  },
+  {
+   "unique_id": "test/intermediate_algebra/428.json",
+   "level": 2,
+   "reference": "3,5,7",
+   "predicted": "3,5,7",
+   "correct": true,
+   "round": 1,
+   "small_in": 2208,
+   "small_out": 6600,
+   "big_in": 0,
+   "big_out": 0,
+   "usd": 0.0,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 8,
+     "answers": [
+      "3,5,7",
+      "3,5,7",
+      "3,5,7",
+      "3,5,7",
+      "3,5,7",
+      "3,5,7",
+      "3,5,7",
+      "3,5,7"
+     ],
+     "correct": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "finish_reasons": [
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop"
+     ],
+     "output_tokens": [
+      736,
+      816,
+      773,
+      793,
+      788,
+      777,
+      799,
+      766
+     ],
+     "majority": "3,5,7",
+     "share": 1.0,
+     "threshold": 0.75,
+     "accepted": true,
+     "majority_correct": true
+    }
+   ]
+  },
+  {
+   "unique_id": "test/geometry/967.json",
+   "level": 3,
+   "reference": "72",
+   "predicted": "72",
+   "correct": true,
+   "round": 1,
+   "small_in": 2215,
+   "small_out": 1841,
+   "big_in": 0,
+   "big_out": 0,
+   "usd": 0.0,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 8,
+     "answers": [
+      "72",
+      "72",
+      "72",
+      "72",
+      "72",
+      "72",
+      "72",
+      "72"
+     ],
+     "correct": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "finish_reasons": [
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop"
+     ],
+     "output_tokens": [
+      173,
+      217,
+      198,
+      196,
+      193,
+      208,
+      163,
+      206
+     ],
+     "majority": "72",
+     "share": 1.0,
+     "threshold": 0.75,
+     "accepted": true,
+     "majority_correct": true
+    }
+   ]
+  },
+  {
+   "unique_id": "test/algebra/24.json",
+   "level": 1,
+   "reference": "2000",
+   "predicted": "2000",
+   "correct": true,
+   "round": 1,
+   "small_in": 2410,
+   "small_out": 1425,
+   "big_in": 0,
+   "big_out": 0,
+   "usd": 0.0,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 8,
+     "answers": [
+      "2000",
+      "2000",
+      "2000",
+      "2000",
+      "2000",
+      "2000",
+      "2000",
+      "2000"
+     ],
+     "correct": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "finish_reasons": [
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop"
+     ],
+     "output_tokens": [
+      145,
+      139,
+      139,
+      120,
+      111,
+      139,
+      139,
+      139
+     ],
+     "majority": "2000",
+     "share": 1.0,
+     "threshold": 0.75,
+     "accepted": true,
+     "majority_correct": true
+    }
+   ]
+  },
+  {
+   "unique_id": "test/number_theory/45.json",
+   "level": 3,
+   "reference": "23",
+   "predicted": "23",
+   "correct": true,
+   "round": 1,
+   "small_in": 2104,
+   "small_out": 2797,
+   "big_in": 0,
+   "big_out": 0,
+   "usd": 0.0,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 7,
+     "answers": [
+      "23",
+      "143",
+      "23",
+      "23",
+      "23",
+      "23",
+      "23",
+      "23"
+     ],
+     "correct": [
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "finish_reasons": [
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop"
+     ],
+     "output_tokens": [
+      338,
+      163,
+      340,
+      337,
+      332,
+      349,
+      330,
+      320
+     ],
+     "majority": "23",
+     "share": 0.875,
+     "threshold": 0.75,
+     "accepted": true,
+     "majority_correct": true
+    }
+   ]
+  },
+  {
+   "unique_id": "test/prealgebra/930.json",
+   "level": 2,
+   "reference": "12",
+   "predicted": "12",
+   "correct": true,
+   "round": 1,
+   "small_in": 3432,
+   "small_out": 1599,
+   "big_in": 0,
+   "big_out": 0,
+   "usd": 0.0,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 8,
+     "answers": [
+      "12",
+      "12",
+      "12",
+      "12",
+      "12",
+      "12",
+      "12",
+      "12"
+     ],
+     "correct": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "finish_reasons": [
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop"
+     ],
+     "output_tokens": [
+      169,
+      165,
+      165,
+      165,
+      163,
+      165,
+      166,
+      169
+     ],
+     "majority": "12",
+     "share": 1.0,
+     "threshold": 0.75,
+     "accepted": true,
+     "majority_correct": true
+    }
+   ]
+  },
+  {
+   "unique_id": "test/geometry/627.json",
+   "level": 4,
+   "reference": "17",
+   "predicted": "17",
+   "correct": true,
+   "round": 1,
+   "small_in": 2494,
+   "small_out": 9815,
+   "big_in": 0,
+   "big_out": 0,
+   "usd": 0.0,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 7,
+     "answers": [
+      "17",
+      "17",
+      "17",
+      "17",
+      "17",
+      "74",
+      "17",
+      "17"
+     ],
+     "correct": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true
+     ],
+     "finish_reasons": [
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "length",
+      "stop",
+      "stop"
+     ],
+     "output_tokens": [
+      1053,
+      980,
+      1202,
+      1281,
+      746,
+      2048,
+      938,
+      1257
+     ],
+     "majority": "17",
+     "share": 0.875,
+     "threshold": 0.75,
+     "accepted": true,
+     "majority_correct": true
+    }
+   ]
+  },
+  {
+   "unique_id": "test/algebra/2214.json",
+   "level": 2,
+   "reference": "4",
+   "predicted": "4",
+   "correct": true,
+   "round": 1,
+   "small_in": 2487,
+   "small_out": 1852,
+   "big_in": 0,
+   "big_out": 0,
+   "usd": 0.0,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 8,
+     "answers": [
+      "4",
+      "4",
+      "4",
+      "4",
+      "4",
+      "4",
+      "4",
+      "4"
+     ],
+     "correct": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "finish_reasons": [
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop"
+     ],
+     "output_tokens": [
+      178,
+      160,
+      178,
+      159,
+      170,
+      178,
+      188,
+      170
+     ],
+     "majority": "4",
+     "share": 1.0,
+     "threshold": 0.75,
+     "accepted": true,
+     "majority_correct": true
+    }
+   ]
+  },
+  {
+   "unique_id": "test/intermediate_algebra/1454.json",
+   "level": 5,
+   "reference": "70\\sqrt{2}",
+   "predicted": "400",
+   "correct": false,
+   "round": 3,
+   "small_in": 5562,
+   "small_out": 33202,
+   "big_in": 377,
+   "big_out": 2113,
+   "usd": 0.0026487,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 0,
+     "answers": [
+      "0",
+      "0",
+      "0",
+      "2",
+      "2",
+      "4050",
+      "2",
+      "20"
+     ],
+     "correct": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+     ],
+     "finish_reasons": [
+      "length",
+      "length",
+      "length",
+      "length",
+      "length",
+      "length",
+      "length",
+      "length"
+     ],
+     "output_tokens": [
+      2048,
+      2048,
+      2048,
+      2048,
+      2048,
+      2048,
+      2048,
+      2048
+     ],
+     "majority": "0",
+     "share": 0.375,
+     "threshold": 0.75,
+     "accepted": false,
+     "majority_correct": false
+    },
+    {
+     "stage": "2b",
+     "attempts": 8,
+     "right": 0,
+     "answers": [
+      "50",
+      "0",
+      "0",
+      "2",
+      "2",
+      "0",
+      "2",
+      "50"
+     ],
+     "correct": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+     ],
+     "finish_reasons": [
+      "length",
+      "length",
+      "length",
+      "length",
+      "length",
+      "length",
+      "length",
+      "length"
+     ],
+     "output_tokens": [
+      2048,
+      2048,
+      2048,
+      2048,
+      2048,
+      2048,
+      2048,
+      2048
+     ],
+     "majority": "0",
+     "share": 0.375,
+     "threshold": 0.5,
+     "accepted": false,
+     "majority_correct": false
+    },
+    {
+     "stage": "3",
+     "attempts": 1,
+     "right": 0,
+     "answers": [
+      "400"
+     ],
+     "correct": [
+      false
+     ],
+     "finish_reasons": [
+      "length"
+     ],
+     "output_tokens": [
+      2048
+     ],
+     "majority": null,
+     "share": null,
+     "threshold": null,
+     "accepted": null,
+     "majority_correct": null
+    }
+   ]
+  },
+  {
+   "unique_id": "test/prealgebra/1558.json",
+   "level": 5,
+   "reference": "1.25",
+   "predicted": "1.25",
+   "correct": true,
+   "round": 1,
+   "small_in": 2936,
+   "small_out": 2672,
+   "big_in": 0,
+   "big_out": 0,
+   "usd": 0.0,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 8,
+     "answers": [
+      "1.25",
+      "1.25",
+      "1.25",
+      "1.25",
+      "1.25",
+      "1.25",
+      "1.25",
+      "1.25"
+     ],
+     "correct": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "finish_reasons": [
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop"
+     ],
+     "output_tokens": [
+      286,
+      286,
+      283,
+      255,
+      266,
+      240,
+      246,
+      282
+     ],
+     "majority": "\\frac{5}{4}",
+     "share": 1.0,
+     "threshold": 0.75,
+     "accepted": true,
+     "majority_correct": true
+    }
+   ]
+  },
+  {
+   "unique_id": "test/geometry/178.json",
+   "level": 3,
+   "reference": "2",
+   "predicted": "2",
+   "correct": true,
+   "round": 1,
+   "small_in": 2323,
+   "small_out": 2115,
+   "big_in": 0,
+   "big_out": 0,
+   "usd": 0.0,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 8,
+     "answers": [
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2"
+     ],
+     "correct": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "finish_reasons": [
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop"
+     ],
+     "output_tokens": [
+      356,
+      177,
+      138,
+      345,
+      179,
+      198,
+      189,
+      186
+     ],
+     "majority": "2",
+     "share": 1.0,
+     "threshold": 0.75,
+     "accepted": true,
+     "majority_correct": true
+    }
+   ]
+  },
+  {
+   "unique_id": "test/precalculus/285.json",
+   "level": 2,
+   "reference": "6",
+   "predicted": "6",
+   "correct": true,
+   "round": 2,
+   "small_in": 4654,
+   "small_out": 28646,
+   "big_in": 86,
+   "big_out": 82,
+   "usd": 0.00012419999999999998,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 6,
+     "answers": [
+      "6",
+      "6",
+      "6",
+      "6",
+      "3",
+      "6",
+      "6",
+      "2"
+     ],
+     "correct": [
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      false
+     ],
+     "finish_reasons": [
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "length",
+      "length",
+      "stop",
+      "length"
+     ],
+     "output_tokens": [
+      1889,
+      1779,
+      1728,
+      1666,
+      2048,
+      2048,
+      1446,
+      2048
+     ],
+     "majority": "6",
+     "share": 0.75,
+     "threshold": 0.75,
+     "accepted": false,
+     "majority_correct": true
+    },
+    {
+     "stage": "2b",
+     "attempts": 8,
+     "right": 7,
+     "answers": [
+      "240",
+      "6",
+      "6",
+      "6",
+      "6",
+      "6",
+      "6",
+      "6"
+     ],
+     "correct": [
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "finish_reasons": [
+      "length",
+      "length",
+      "length",
+      "length",
+      "stop",
+      "stop",
+      "stop",
+      "stop"
+     ],
+     "output_tokens": [
+      2048,
+      2048,
+      2048,
+      2048,
+      1683,
+      1097,
+      1527,
+      1089
+     ],
+     "majority": "6",
+     "share": 0.875,
+     "threshold": 0.5,
+     "accepted": true,
+     "majority_correct": true
+    }
+   ]
+  },
+  {
+   "unique_id": "test/algebra/305.json",
+   "level": 5,
+   "reference": "5",
+   "predicted": "5",
+   "correct": true,
+   "round": 1,
+   "small_in": 2744,
+   "small_out": 3111,
+   "big_in": 0,
+   "big_out": 0,
+   "usd": 0.0,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 8,
+     "answers": [
+      "5",
+      "5",
+      "5",
+      "5",
+      "5",
+      "5",
+      "5",
+      "5"
+     ],
+     "correct": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "finish_reasons": [
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop"
+     ],
+     "output_tokens": [
+      299,
+      328,
+      310,
+      328,
+      345,
+      302,
+      333,
+      330
+     ],
+     "majority": "5",
+     "share": 1.0,
+     "threshold": 0.75,
+     "accepted": true,
+     "majority_correct": true
+    }
+   ]
+  },
+  {
+   "unique_id": "test/algebra/1265.json",
+   "level": 2,
+   "reference": "\\frac{3}{2}",
+   "predicted": "\\frac{3}{2}",
+   "correct": true,
+   "round": 1,
+   "small_in": 1952,
+   "small_out": 1688,
+   "big_in": 0,
+   "big_out": 0,
+   "usd": 0.0,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 8,
+     "answers": [
+      "\\frac{3}{2}",
+      "\\frac{3}{2}",
+      "\\frac{3}{2}",
+      "\\frac{3}{2}",
+      "\\frac{3}{2}",
+      "\\frac{3}{2}",
+      "\\frac{3}{2}",
+      "\\frac{3}{2}"
+     ],
+     "correct": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "finish_reasons": [
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop"
+     ],
+     "output_tokens": [
+      175,
+      171,
+      185,
+      185,
+      185,
+      175,
+      175,
+      173
+     ],
+     "majority": "\\frac{3}{2}",
+     "share": 1.0,
+     "threshold": 0.75,
+     "accepted": true,
+     "majority_correct": true
+    }
+   ]
+  },
+  {
+   "unique_id": "test/prealgebra/1388.json",
+   "level": 4,
+   "reference": "83",
+   "predicted": "83",
+   "correct": true,
+   "round": 1,
+   "small_in": 2099,
+   "small_out": 2033,
+   "big_in": 0,
+   "big_out": 0,
+   "usd": 0.0,
+   "stages": [
+    {
+     "stage": "1b",
+     "attempts": 8,
+     "right": 8,
+     "answers": [
+      "83",
+      "83",
+      "83",
+      "83",
+      "83",
+      "83",
+      "83",
+      "83"
+     ],
+     "correct": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+     ],
+     "finish_reasons": [
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop",
+      "stop"
+     ],
+     "output_tokens": [
+      217,
+      215,
+      217,
+      217,
+      217,
+      217,
+      217,
+      217
+     ],
+     "majority": "83",
+     "share": 1.0,
+     "threshold": 0.75,
+     "accepted": true,
+     "majority_correct": true
+    }
+   ]
+  }
+ ]
+}

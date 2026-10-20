@@ -1,0 +1,19 @@
+{
+ "file": "outputs/cs470/qwen3-4b-orig/mbpp_small.jsonl",
+ "tasks": 50,
+ "excluded_task_ids": [],
+ "correct": 31,
+ "accuracy": 0.62,
+ "passes_public": 38,
+ "tokens_per_task": 555.36,
+ "small_tokens_per_task": 555.36,
+ "big_tokens_per_task": 0.0,
+ "usd_total": 0.0,
+ "rounds": {
+  "0": 50,
+  "1": 0,
+  "2": 0,
+  "3": 0
+ },
+ "stage_checks": {}
+}

@@ -1,0 +1,32 @@
+# cs470: as ../mbpp_small.yaml, with the small model replaced by the original April Qwen3-4B, Qwen's official FP8 build; thinking off, as in every other run.
+# Runs from .venv-vllm (vLLM 0.31): the COPE venv's vLLM 0.6.3 predates both models.
+# cs470: Qwen2.5-1.5B alone (one greedy solution, no tests consulted) on the
+# first 50 eligible MBPP test tasks; hidden MBPP-ET tests decide correctness.
+approach: direct
+direct_model: small
+seed: 0
+model_path_big: deepseek-flash
+model_path_small: Qwen/Qwen3-4B-FP8
+small_engine_kwargs:
+  revision: 96b30dc13593a244a5e59e84687309f53c375cfa
+  max_model_len: 4096  # prompts are short; 2048-token output cap
+  kv_cache_dtype: fp8
+  attention_backend: TRITON_ATTN  # FlashInfer JIT-compiles with nvcc, absent here
+  max_num_seqs: 32
+  max_num_batched_tokens: 4096
+chat_template_kwargs:
+  enable_thinking: false
+custom_chat_template: null  # the model's own chat template
+
+# Executor and planner prompts quoted from the COPE paper (code generation).
+system_prompt: "You are an expert Python programmer. Solve the following coding problem efficiently and clearly."
+system_prompt_guide_big: "You are an expert Python programmer. Explain how to solve the following coding problem. Focus on strategy and key ideas. Respond in just one or two sentences."
+# The paper gives no small-model goal prompt for code; adapted from the maths one.
+system_prompt_guide_small: "You are an expert Python programmer.\nState the goal of the following coding problem in one sentence."
+
+num_samples: 50
+n: 1
+max_tokens: 2048
+gpu_memory_utilization: 0.95
+enforce_eager: false  # .venv-vllm has the patched ptxas, so torch.compile works
+output_path: outputs/cs470/qwen3-4b-orig/mbpp_small.jsonl

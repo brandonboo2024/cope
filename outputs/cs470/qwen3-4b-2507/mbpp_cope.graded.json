@@ -1,0 +1,38 @@
+{
+ "file": "outputs/cs470/qwen3-4b-2507/mbpp_cope.jsonl",
+ "tasks": 50,
+ "excluded_task_ids": [],
+ "correct": 38,
+ "accuracy": 0.76,
+ "passes_public": 47,
+ "tokens_per_task": 7869.36,
+ "small_tokens_per_task": 7704.58,
+ "big_tokens_per_task": 164.78,
+ "usd_total": 0.007580099999999999,
+ "rounds": {
+  "0": 0,
+  "1": 42,
+  "2": 3,
+  "3": 5
+ },
+ "stage_checks": {
+  "1b": {
+   "ran": 50,
+   "accepted": 42,
+   "accepted_wrong": 9,
+   "rejected_any_right": 0,
+   "pass_public_fail_hidden": 66,
+   "candidates": 400,
+   "capped_candidates": 46
+  },
+  "2b": {
+   "ran": 8,
+   "accepted": 3,
+   "accepted_wrong": 0,
+   "rejected_any_right": 0,
+   "pass_public_fail_hidden": 0,
+   "candidates": 64,
+   "capped_candidates": 13
+  }
+ }
+}
