@@ -174,4 +174,36 @@ def big_plan_code(task, config, llm_big, llm_small, rng):
     return {**rec, "pred": pred}
 
 
-CODE_APPROACHES = {"collaborative": cope_code, "direct": direct_code, "big_plan": big_plan_code}
+def big_guide_code(task, config, llm_big, llm_small, rng):
+    """COPE's stage 2 for every task: the large model's guideline, n small-model programs,
+    one that passes the public tests picked at random (the first program if none passes).
+    Nothing is escalated. As in the cascade's stage 2, the small goal is passed as None.
+    """
+    rec = {"small_in": 0, "small_out": 0, "big_in": 0, "big_out": 0,
+           "guide_small": None, "round": 2, "stages": []}
+    problem = task["problem"]
+    rec["guide_big"], tok, finish = big_generate(
+        llm_big, config, conv(config.system_prompt_guide_big, problem), 0.8)
+    rec["big_in"], rec["big_out"] = tok
+    rec["stages"].append({"stage": "2a", "model": "big", "temperature": 0.8,
+                          "messages": [conv(config.system_prompt_guide_big, problem)],
+                          "outputs": [rec["guide_big"]], "finish_reasons": [finish],
+                          "output_tokens": [tok[1]]})
+    c = conv(config.system_prompt, config.user_prompt_guide_2.format(
+        problem=problem, guide_small=None, guide_big=rec["guide_big"]))
+    cands, tokens, finish = small_generate(llm_small, config, [c] * config.n, 0.8)
+    rec["small_in"] = sum(t[0] for t in tokens)
+    rec["small_out"] = sum(t[1] for t in tokens)
+    ok = [passes(extract_code(x), task["public_tests"], task["setup"]) for x in cands]
+    passing = [i for i, p in enumerate(ok) if p]
+    chosen = rng.choice(passing) if passing else None
+    rec["stages"].append({"stage": "2b", "model": "small", "temperature": 0.8, "messages": [c],
+                          "outputs": cands, "finish_reasons": finish,
+                          "output_tokens": [t[1] for t in tokens],
+                          "vote": {"passes_public": ok, "accepted": chosen is not None,
+                                   "chosen": chosen}})
+    return {**rec, "pred": cands[chosen or 0]}
+
+
+CODE_APPROACHES = {"collaborative": cope_code, "direct": direct_code, "big_plan": big_plan_code,
+                   "big_guide": big_guide_code}

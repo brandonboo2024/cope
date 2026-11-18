@@ -337,3 +337,40 @@ def collaborative(x, config: Config, llm_big, llm_small):
 
     x = finalize_outputs(x, items)
     return x
+
+
+def big_guide(x, config: Config, llm_big, llm_small):
+    """cs470: COPE's stage 2 for every task. The large model writes the guideline and the
+    small model solves n times with it; nothing is escalated. Compared with stage 1b of the
+    cascade (the small model's own goal, every task), this measures the guideline's author
+    without the cascade's selection of hard tasks. As in the cascade, a task reaches stage 2
+    with no accepted small goal, so the goal is passed as None.
+    """
+    items = [{"problem": problem, "pred": None, "guide_big": None, "guides_small": [""] * config.n, "guide_small": None, "small_in": 0, "small_out": 0, "big_in": 0, "big_out": 0, "round": 2, "stages": []} for problem in x["problem"]]
+    idxs, probs = get_active_idxs_and_probs(items)
+
+    convs = [
+        [
+            {"role": "system", "content": config.system_prompt_guide_big},
+            {"role": "user", "content": prob},
+        ]
+        for prob in probs
+    ]
+    items = generate_big(convs, config, llm_big, idxs, items, temperature=0.8, target="guide", stage="2a")
+
+    convs = [
+        [
+            {"role": "system", "content": config.system_prompt},
+            {"role": "user", "content": config.user_prompt_guide_2.format(problem=prob, guide_small=None, guide_big=items[idx]["guide_big"])},
+        ]
+        for idx, prob in zip(idxs, probs)
+    ]
+    items = generate_small(convs, config, llm_small, idxs, items, temperature=0.8, target="pred", duplicate=True, stage="2b", thresh=0.5)
+
+    # No stage 3 here: a rejected vote still submits an attempt with the most common answer.
+    for item in items:
+        if item["pred"] is None:
+            stage = item["stages"][-1]
+            item["pred"] = stage["outputs"][stage["vote"]["answers"].index(stage["vote"]["majority"])]
+
+    return finalize_outputs(x, items)

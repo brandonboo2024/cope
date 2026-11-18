@@ -1,0 +1,29 @@
+{
+ "file": "outputs/cs470/qwen3-4b-2507/mbpp_big_guide.jsonl",
+ "tasks": 50,
+ "excluded_task_ids": [],
+ "correct": 35,
+ "accuracy": 0.7,
+ "passes_public": 44,
+ "tokens_per_task": 3742.5,
+ "small_tokens_per_task": 3566.22,
+ "big_tokens_per_task": 176.28,
+ "usd_total": 0.004554000000000001,
+ "rounds": {
+  "0": 0,
+  "1": 0,
+  "2": 50,
+  "3": 0
+ },
+ "stage_checks": {
+  "2b": {
+   "ran": 50,
+   "accepted": 44,
+   "accepted_wrong": 9,
+   "rejected_any_right": 0,
+   "pass_public_fail_hidden": 70,
+   "candidates": 400,
+   "capped_candidates": 17
+  }
+ }
+}

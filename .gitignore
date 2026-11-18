@@ -15,3 +15,6 @@ outputs/*
 !outputs/cs470/
 .agents/
 .codex/
+
+# Hugging Face dataset cache
+data/raw/

@@ -21,7 +21,7 @@ from vllm import LLM
 
 from sal.config import Config
 from sal.models.reward_models import load_prm
-from sal.search import beam_search, best_of_n, big_plan, dvts, collaborative, direct
+from sal.search import beam_search, best_of_n, big_guide, big_plan, dvts, collaborative, direct
 from sal.utils.data import get_dataset, save_dataset
 from sal.utils.parser import H4ArgumentParser
 from sal.utils.score import score
@@ -40,6 +40,7 @@ APPROACHES = {
     "collaborative": collaborative,
     "direct": direct,
     "big_plan": big_plan,
+    "big_guide": big_guide,
 }
 
 
